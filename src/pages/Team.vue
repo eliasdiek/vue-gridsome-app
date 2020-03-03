@@ -136,14 +136,16 @@
                 :map-type-id="mapTypeId" 
                 :options="{mapTypeControl: false, streetViewControl: false, styles: mapStyle, zoomControlOptions: {position: zoomControlPosotion}, minZoom: 1, maxZoom: 5}" 
                 style="width: 100%; height: 48rem">
-                    <gmap-marker v-for="(m, index) in markers"
-                    :position="m.position"
-                    :clickable="true"
-                    :draggable="false"
-                    :key="index"
-                    :icon="mapIcon"
-                    @click="center=m.position"
-                    ></gmap-marker>
+                    <gmap-cluster gridSize="5" :styles="clusterStyles">
+                        <gmap-marker v-for="(person, index) in persons"
+                        :position="person.position"
+                        :clickable="true"
+                        :draggable="false"
+                        :key="index"
+                        :icon="mapIcon"
+                        @click="center=person.position"
+                        ></gmap-marker>
+                    </gmap-cluster>
                 </google-map>
             </v-container>
         </div>
@@ -160,6 +162,7 @@ import Footer from "../components/Footer";
 import MakeConnection from "../components/MakeConnection";
 import Person from "../components/Person";
 import * as VueGoogleMaps from 'vue2-google-maps';
+import GmapCluster from "vue2-google-maps/dist/components/cluster";
 
 Vue.use(VueGoogleMaps, {
   load: {
@@ -175,19 +178,7 @@ export default {
     components: {
         'google-map': VueGoogleMaps.Map,
         'google-marker': VueGoogleMaps.Marker,
-        'ground-overlay': VueGoogleMaps.MapElementFactory({
-            mappedProps: {
-                'opacity': {}
-            },
-            props: {
-                'source': {type: String},
-                'bounds': {type: Object},
-            },
-            events: ['click', 'dblclick'],
-            name: 'groundOverlay',
-            ctr: () => google.maps.GroundOverlay,
-            ctrArgs: (options, {source, bounds}) => [source, bounds, options],
-        }),
+        'gmap-cluster': GmapCluster,
         Footer,
         MakeConnection,
         Person
@@ -203,168 +194,168 @@ export default {
                     firstName: "Brendan",
                     lastName: "Binger",
                     role: "Founder / Design Director / Architect",
-                    photo: require("~/assets/images/members/brendan-binger.png")
-                },
-                {
-                    firstName: "Dennish",
-                    lastName: "Karki",
-                    role: "Sr Engineer",
-                    photo: require("~/assets/images/members/dennish-karki.png")
-                },
-                {
-                    firstName: "Valentin",
-                    lastName: "Sanguinetti",
-                    role: "Sr Visual Designer",
-                    photo: require("~/assets/images/members/valentin-sanguinetti.png")
-                },
-                {
-                    firstName: "Oleg",
-                    lastName: "Bochulyak",
-                    role: "Sr Product Designer",
-                    photo: require("~/assets/images/members/oleg-bochulyakr.png")
-                },
-                {
-                    firstName: "Federico",
-                    lastName: "Bernotti",
-                    role: "Identity & Brand Systems Designer",
-                    photo: require("~/assets/images/members/federico-bernotti.png")
-                },
-                {
-                    firstName: "Vinay",
-                    lastName: "Paudel",
-                    role: "Engineer",
-                    photo: require("~/assets/images/members/vinay-paudel.png")
-                },
-                {
-                    firstName: "Puneet",
-                    lastName: "Maloo",
-                    role: "Sr Engineer & Systems Architect",
-                    photo: require("~/assets/images/members/puneet-maloo.png")
-                },
-                {
-                    firstName: "Dmitry",
-                    lastName: "Kutuzov",
-                    name: "Dmitry Kutuzov",
-                    role: "PPC Analyst",
-                    photo: require("~/assets/images/members/dmitry-kutuzov.png")
-                },
-                {
-                    firstName: "Evgeniy",
-                    lastName: "Fishbein",
-                    role: "Data Engineer",
-                    photo: require("~/assets/images/members/evgeniy-fishbein.png")
-                },
-                {
-                    firstName: "Kiros",
-                    lastName: "Matavastros",
-                    role: "Engineer",
-                    photo: require("~/assets/images/members/kiros-matavastros.png")
-                },
-                {
-                    firstName: "Nick",
-                    lastName: "Burdukin",
-                    role: "Sr Engineer",
-                    photo: require("~/assets/images/members/nick-burdukin.png")
-                },
-                {
-                    firstName: "Serg",
-                    lastName: "Guba",
-                    role: "Product Designer",
-                    photo: require("~/assets/images/members/serg-guba.png")
-                },
-                {
-                    firstName: "Alexey",
-                    lastName: "Pronin",
-                    role: "Engineer",
-                    photo: require("~/assets/images/members/alexey-pronin.png")
-                },
-                {
-                    firstName: "Dmitry",
-                    lastName: "Sheftelev",
-                    role: "Engineer",
-                    photo: require("~/assets/images/members/dmitry-sheftelev.png")
-                },
-                {
-                    firstName: "Naveen",
-                    lastName: "Kumar Jain",
-                    role: "Engineer",
-                    photo: require("~/assets/images/members/naveen-kumar.png")
-                },
-            ],
-            mapIcon: require("~/assets/images/marker.png"),
-            center: {
-                lat: 10.0,
-                lng: 10.0
-            },
-            zoomControlPosotion: 6,
-            markers: [
-                {
+                    photo: require("~/assets/images/members/brendan-binger.png"),
                     position: {
                         lat: 43.289614,
                         lng: -121.648436
                     }
                 },
                 {
+                    firstName: "Dennish",
+                    lastName: "Karki",
+                    role: "Sr Engineer",
+                    photo: require("~/assets/images/members/dennish-karki.png"),
                     position: {
                         lat: 2.060059,
                         lng: -76.121094
                     }
                 },
                 {
+                    firstName: "Valentin",
+                    lastName: "Sanguinetti",
+                    role: "Sr Visual Designer",
+                    photo: require("~/assets/images/members/valentin-sanguinetti.png"),
                     position: {
                         lat: -33.764978,
                         lng: -56.082029
                     }
                 },
                 {
+                    firstName: "Oleg",
+                    lastName: "Bochulyak",
+                    role: "Sr Product Designer",
+                    photo: require("~/assets/images/members/oleg-bochulyakr.png"),
                     position: {
                         lat: 51.5074,
                         lng: 0.1278
                     }
                 },
                 {
+                    firstName: "Federico",
+                    lastName: "Bernotti",
+                    role: "Identity & Brand Systems Designer",
+                    photo: require("~/assets/images/members/federico-bernotti.png"),
                     position: {
                         lat: 41.865892,
                         lng: 13.000000
                     },
                 },
                 {
+                    firstName: "Vinay",
+                    lastName: "Paudel",
+                    role: "Engineer",
+                    photo: require("~/assets/images/members/vinay-paudel.png"),
                     position: {
                         lat: 50.032809,
                         lng: 24.953124
                     },
                 },
                 {
+                    firstName: "Puneet",
+                    lastName: "Maloo",
+                    role: "Sr Engineer & Systems Architect",
+                    photo: require("~/assets/images/members/puneet-maloo.png"),
                     position: {
                         lat: 50.816705,
                         lng: 31.105468
                     },
                 },
                 {
+                    firstName: "Dmitry",
+                    lastName: "Kutuzov",
+                    name: "Dmitry Kutuzov",
+                    role: "PPC Analyst",
+                    photo: require("~/assets/images/members/dmitry-kutuzov.png"),
+                    position: {
+                        lat: 48.976983,
+                        lng: 38.048829
+                    }
+                },
+                {
+                    firstName: "Evgeniy",
+                    lastName: "Fishbein",
+                    role: "Data Engineer",
+                    photo: require("~/assets/images/members/evgeniy-fishbein.png"),
+                    position: {
+                        lat: 48.976983,
+                        lng: 38.048829
+                    },
+                },
+                {
+                    firstName: "Kiros",
+                    lastName: "Matavastros",
+                    role: "Engineer",
+                    photo: require("~/assets/images/members/kiros-matavastros.png"),
+                    position: {
+                        lat: 48.976983,
+                        lng: 38.048829
+                    },
+                },
+                {
+                    firstName: "Nick",
+                    lastName: "Burdukin",
+                    role: "Sr Engineer",
+                    photo: require("~/assets/images/members/nick-burdukin.png"),
+                    position: {
+                        lat: 48.976983,
+                        lng: 38.048829
+                    },
+                },
+                {
+                    firstName: "Serg",
+                    lastName: "Guba",
+                    role: "Product Designer",
+                    photo: require("~/assets/images/members/serg-guba.png"),
                     position: {
                         lat: 57.771890,
                         lng: 35.499999
                     }
                 },
                 {
+                    firstName: "Alexey",
+                    lastName: "Pronin",
+                    role: "Engineer",
+                    photo: require("~/assets/images/members/alexey-pronin.png"),
                     position: {
                         lat: 56.435480,
                         lng: 38.433593
-                    },
+                    }
                 },
                 {
+                    firstName: "Dmitry",
+                    lastName: "Sheftelev",
+                    role: "Engineer",
+                    photo: require("~/assets/images/members/dmitry-sheftelev.png"),
                     position: {
                         lat: 22.548598,
                         lng: 86.300778
-                    },
+                    }
                 },
                 {
+                    firstName: "Naveen",
+                    lastName: "Kumar Jain",
+                    role: "Engineer",
+                    photo: require("~/assets/images/members/naveen-kumar.png"),
                     position: {
                         lat: 27.172086,
                         lng: 86.300778
-                    },
+                    }
+                },
+            ],
+            mapIcon: require("~/assets/images/marker.png"),
+            clusterStyles: [
+                {
+                    textColor: 'black',
+                    url: require("~/assets/images/cluster-icon.png"),
+                    height: 15,
+                    width: 13.5
                 }
             ],
+            center: {
+                lat: 10.0,
+                lng: 10.0
+            },
+            zoomControlPosotion: 6,
             mapStyle: [
             {elementType: 'labels.text.fill', stylers: [{display: 'none'}]},
             {
