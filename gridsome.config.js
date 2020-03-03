@@ -15,6 +15,11 @@ module.exports = {
       }
     }
   ],
+  chainWebpack (config, { isServer }) {
+    if (isServer) {
+      config.externals([/^(vue|vue-router|vue-meta)$/])
+    }
+  },
   templates: {
     WordPressPost: [
       {

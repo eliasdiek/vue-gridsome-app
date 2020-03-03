@@ -134,7 +134,7 @@
                 :center="center" 
                 :zoom="2.6" 
                 :map-type-id="mapTypeId" 
-                :options="{mapTypeControl: false, streetViewControl: false, styles: mapStyle, zoomControlOptions: {position: zoomControlPosotion}}" 
+                :options="{mapTypeControl: false, streetViewControl: false, styles: mapStyle, zoomControlOptions: {position: zoomControlPosotion}, minZoom: 1, maxZoom: 5}" 
                 style="width: 100%; height: 48rem">
                     <gmap-marker v-for="(m, index) in markers"
                     :position="m.position"
@@ -155,10 +155,11 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import Footer from "../components/Footer";
 import MakeConnection from "../components/MakeConnection";
 import Person from "../components/Person";
-import * as VueGoogleMaps from 'vue2-google-maps'
+import * as VueGoogleMaps from 'vue2-google-maps';
 
 Vue.use(VueGoogleMaps, {
   load: {
@@ -311,8 +312,8 @@ export default {
                 },
                 {
                     position: {
-                        lat: -33.973972,
-                        lng: -55.906248
+                        lat: -33.764978,
+                        lng: -56.082029
                     }
                 },
                 {
@@ -418,31 +419,19 @@ export default {
                 }]
             }, {
                 "featureType": "administrative.country",
-                "elementType": "all",
-                "stylers": [{
-                    "visibility": "off"
-                }]
-            }, {
-                "featureType": "administrative.country",
-                "elementType": "geometry",
-                "stylers": [{
-                    "visibility": "off"
-                }]
-            }, {
-                "featureType": "administrative.country",
                 "elementType": "labels.text",
                 "stylers": [{
                     "visibility": "off"
                 }]
             }, {
                 "featureType": "administrative.province",
-                "elementType": "all",
+                "elementType": "labels.text",
                 "stylers": [{
                     "visibility": "simplified"
                 },{
                     "color": "#000000"
                 }, {
-                    "lightness": 8
+                    "lightness": 14
                 }]
             }, {
                 "featureType": "administrative.locality",

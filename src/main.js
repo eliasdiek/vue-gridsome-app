@@ -29,8 +29,6 @@ export default function(Vue, { appOptions, head, isServer }) {
     }
   };
 
-  window.Vue = Vue;
-
   Vue.use(Vuetify);
   Vue.use(VueScrollTo);
 
