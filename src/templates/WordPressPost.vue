@@ -29,7 +29,11 @@
       <v-container class="blogdetail-content-section">
         <div class="blogdetail-social-block">
           <div class="quarry-label-wrapper">
-            <span class="quarry-label" :class="$page.post.categories[0].slug" @click="backToBlog">
+            <span
+              class="quarry-label"
+              :class="$page.post.categories[0].slug"
+              @click="backToBlog"
+            >
               {{ $page.post.categories[0].title }}
             </span>
           </div>
@@ -171,21 +175,21 @@ export default {
 
   data() {
     return {
-      pageUrl: ''
-    }
+      pageUrl: ""
+    };
   },
 
   methods: {
     ...mapMutations(["setActiveCategory"]),
     backToBlog() {
-      let categoryId = this.$page.post.categories[0].id
-      this.setActiveCategory(categoryId)
-      this.$router.push('/blog')
+      let categoryId = this.$page.post.categories[0].id;
+      this.setActiveCategory(categoryId);
+      this.$router.push("/blog");
     }
   },
 
   mounted() {
-    this.pageUrl = window.location.href
+    this.pageUrl = window.location.href;
   },
 
   metaInfo() {

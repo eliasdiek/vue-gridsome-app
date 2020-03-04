@@ -6,9 +6,9 @@
     "build": "gridsome build",
     "develop": "gridsome develop",
     "explore": "gridsome explore",
-    "lint": "eslint '@(src)/**/*.@(js|vue)'",
-    "prettier": "prettier --write '@(src)/**/*.@(js|vue|scss)' '*.js'",
-    "prettier:validate": "prettier-check '@(src)/**/*.@(js|vue|scss)' '*.js'"
+    "lint": "eslint \"@(src)/**/*.@(js|vue)\"",
+    "prettier": "prettier --write \"@(src)/**/*.@(vue|js|scss)\" \"*.js\"",
+    "prettier:validate": "prettier --check \"@(src)/**/*.@(js|vue|scss)\" \"*.js\""
   },
   "dependencies": {
     "@gridsome/source-wordpress": "^0.5.2",

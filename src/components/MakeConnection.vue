@@ -10,7 +10,10 @@
           another world
         </p>
         <v-row class="align-center">
-          <v-btn class="quarry-btn btn-primary start-conversation" @click="() => $router.push('/contact')">
+          <v-btn
+            class="quarry-btn btn-primary start-conversation"
+            @click="() => $router.push('/contact')"
+          >
             Start a Conversation
           </v-btn>
           <g-link to="/services" class="learn-more">Learn More</g-link>

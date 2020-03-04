@@ -61,31 +61,10 @@
 </template>
 
 <static-query>
-query {
-  allWordPressCategory(limit: 100) {
-    edges {
-      node {
-        id
-        title
-        slug
-      }
-    }
-  }
-}
-</static-query>
-
-<page-query>
-query {
-  posts: allWordPressPost(limit: 1000) {
-    edges {
-      node {
-        id
-        title
-        featuredMedia {
-          id
-          sourceUrl
-        }
-        categories {
+  query {
+    allWordPressCategory(limit: 100) {
+      edges {
+        node {
           id
           title
           slug
@@ -93,7 +72,28 @@ query {
       }
     }
   }
-}
+</static-query>
+
+<page-query>
+  query {
+    posts: allWordPressPost(limit: 1000) {
+      edges {
+        node {
+          id
+          title
+          featuredMedia {
+            id
+            sourceUrl
+          }
+          categories {
+            id
+            title
+            slug
+          }
+        }
+      }
+    }
+  }
 </page-query>
 
 <script>
@@ -103,7 +103,7 @@ import MakeConnection from "../components/MakeConnection";
 import CategoriesWidget from "../components/CategoriesWidget";
 import { mapGetters, mapMutations } from "vuex";
 
-let vm = this
+let vm = this;
 
 export default {
   metaInfo: {
@@ -123,7 +123,7 @@ export default {
       selectedCategory: "all",
       images: {},
       selectedPosts: [],
-      categoryShouldbeUpdated: false,
+      categoryShouldbeUpdated: false
     };
   },
 
@@ -160,14 +160,13 @@ export default {
 
   beforeRouteEnter(to, from, next) {
     next(vm => {
-      if(from.path.includes('blog')) {
-        let category = vm.$store.state.activeCategory
-        vm.changeCategory(category)
-      }
-      else {
+      if (from.path.includes("blog")) {
+        let category = vm.$store.state.activeCategory;
+        vm.changeCategory(category);
+      } else {
         vm.selectedPosts = vm.$page.posts.edges;
       }
-    })
+    });
   }
 };
 </script>

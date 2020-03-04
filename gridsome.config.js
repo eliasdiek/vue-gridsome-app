@@ -15,9 +15,9 @@ module.exports = {
       }
     }
   ],
-  chainWebpack (config, { isServer }) {
+  chainWebpack(config, { isServer }) {
     if (isServer) {
-      config.externals([/^(vue|vue-router|vue-meta)$/])
+      config.externals([/^(vue|vue-router|vue-meta)$/]);
     }
   },
   templates: {

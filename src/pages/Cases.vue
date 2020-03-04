@@ -67,31 +67,10 @@
 </template>
 
 <static-query>
-query {
-  allWordPressCasecategory(limit: 100) {
-    edges {
-      node {
-        id
-        title
-        slug
-      }
-    }
-  }
-}
-</static-query>
-
-<page-query>
-query {
-  cases: allWordPressCases(limit: 1000) {
-    edges {
-      node {
-        id
-        title
-        featuredMedia {
-          id
-          sourceUrl
-        }
-        casecategory {
+  query {
+    allWordPressCasecategory(limit: 100) {
+      edges {
+        node {
           id
           title
           slug
@@ -99,7 +78,28 @@ query {
       }
     }
   }
-}
+</static-query>
+
+<page-query>
+  query {
+    cases: allWordPressCases(limit: 1000) {
+      edges {
+        node {
+          id
+          title
+          featuredMedia {
+            id
+            sourceUrl
+          }
+          casecategory {
+            id
+            title
+            slug
+          }
+        }
+      }
+    }
+  }
 </page-query>
 
 <script>

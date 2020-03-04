@@ -14,7 +14,7 @@ export default new Vuex.Store({
       { text: "Blog", to: "/blog" },
       { text: "Contact", to: "/contact" }
     ],
-    activeCategory: "all",
+    activeCategory: "all"
   },
   getters: {
     links: state => {
@@ -26,8 +26,8 @@ export default new Vuex.Store({
     toggleDrawer: state => (state.drawer = !state.drawer),
     setActiveLink: (state, payload) => (state.activeLink = payload),
     setActiveCategory: (state, payload) => {
-      console.log("payload: " + payload)
-      state.activeCategory = payload
+      console.log("payload: " + payload);
+      state.activeCategory = payload;
     }
   },
   actions: {}

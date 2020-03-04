@@ -44,7 +44,11 @@ export default {
   computed: {
     ...mapGetters(["links"]),
     logo: function() {
-      if (["services", "cases", "blog", "contact", "team"].includes(this.activeLink)) {
+      if (
+        ["services", "cases", "blog", "contact", "team"].includes(
+          this.activeLink
+        )
+      ) {
         return require("~/assets/images/icon-logo-white.svg");
       } else {
         return require("~/assets/images/icon-logo-quarry.svg");
