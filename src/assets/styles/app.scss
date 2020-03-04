@@ -2068,6 +2068,19 @@ button.quarry-btn {
     max-width: 85.6% !important;
     margin-left: 0;
     margin-right: auto;
+
+    @media screen and (max-width: 600px) {
+      max-width: 100% !important;
+    }
+  }
+
+  .vue-map-container {
+    width: 100%;
+    height: 48rem;
+
+    @media screen and (max-width: 600px) {
+      height: 23rem;
+    }
   }
 }
 

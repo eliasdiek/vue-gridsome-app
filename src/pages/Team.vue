@@ -94,16 +94,18 @@
         <v-container class="team-members-section-wrapper">
           <h3 class="block-title">The team</h3>
           <div class="section-body">
-            <v-row no-gutters justify="center">
-              <v-col
-                cols="12"
-                sm="3"
-                v-for="(person, index) in persons"
-                :key="index"
-              >
-                <Person :person="person" />
-              </v-col>
-            </v-row>
+            <v-container>
+              <v-row no-gutters justify="center">
+                <v-col
+                  cols="6"
+                  sm="3"
+                  v-for="(person, index) in persons"
+                  :key="index"
+                >
+                  <Person :person="person" />
+                </v-col>
+              </v-row>
+            </v-container>
           </div>
         </v-container>
       </div>
@@ -135,7 +137,7 @@
         >
           <google-map
             :center="center"
-            :zoom="2.6"
+            :zoom="initialZoomSize"
             :map-type-id="mapTypeId"
             :options="{
               mapTypeControl: false,
@@ -145,7 +147,6 @@
               minZoom: 1,
               maxZoom: 5
             }"
-            style="width: 100%; height: 48rem"
           >
             <gmap-cluster :gridSize="10" :styles="clusterStyles">
               <gmap-marker
@@ -200,6 +201,7 @@ export default {
       team_hero_image: require("~/assets/images/team-hero.jpg"),
       map: require("~/assets/images/map.png"),
       mapTypeId: "roadmap",
+      initialZoomSize: 2.6,
       overlayImg: require("~/assets/images/map.png"),
       persons: [
         {
@@ -654,6 +656,29 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    adjustZoomSize() {
+      const vm = this;
+      let windowWidth = document.documentElement.clientWidth;
+      if (windowWidth < 600) {
+        vm.initialZoomSize = 1;
+      } else {
+        vm.initialZoomSize = 2.6;
+      }
+
+      window.addEventListener("resize", () => {
+        windowWidth = document.documentElement.clientWidth;
+        if (windowWidth < 600) {
+          vm.initialZoomSize = 1;
+        } else {
+          vm.initialZoomSize = 2.6;
+        }
+      });
+    }
+  },
+  mounted() {
+    this.adjustZoomSize();
   }
 };
 </script>
