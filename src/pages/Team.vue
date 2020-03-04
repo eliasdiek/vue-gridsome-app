@@ -147,7 +147,7 @@
             }"
             style="width: 100%; height: 48rem"
           >
-            <gmap-cluster gridSize="10" :styles="clusterStyles">
+            <gmap-cluster :gridSize="10" :styles="clusterStyles">
               <gmap-marker
                 v-for="(person, index) in persons"
                 :position="person.position"
