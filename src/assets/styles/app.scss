@@ -302,7 +302,8 @@ button.quarry-btn {
     &.services,
     &.cases,
     &.team,
-    &.blog {
+    &.blog,
+    &.contact {
       .hamburger.is-active .hamburger-inner,
       .hamburger.is-active .hamburger-inner::before,
       .hamburger.is-active .hamburger-inner::after {
@@ -315,7 +316,6 @@ button.quarry-btn {
       }
     }
   }
-
   .v-navigation-drawer {
     max-width: 31.25rem;
     .v-toolbar__title {
@@ -1082,6 +1082,7 @@ button.quarry-btn {
   .quarry-card {
     border-radius: 0 !important;
     box-shadow: none;
+    height: 100%;
   }
   .quarry-card:hover {
     box-shadow: 0 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
@@ -1200,7 +1201,6 @@ button.quarry-btn {
     padding-top: 0;
     .cases-connection-section {
       padding: 5rem 2rem;
-      text-align: center;
 
       button {
         margin: auto;
@@ -1798,7 +1798,7 @@ button.quarry-btn {
 }
 
 .quarry-label-wrapper {
-  margin-top: 2.25rem;
+  margin-top: 0;
   @media screen and (max-width: 960px) {
     margin-top: 0.5rem;
     margin-right: 2rem;
@@ -1809,11 +1809,16 @@ button.quarry-btn {
   span:first-child {
     margin-left: 0;
   }
+}
+.cases-labels-section {
+  .quarry-label-wrapper {
+    margin-top: 2.25rem;
 
-  &.is-selected {
-    margin-top: 1.75rem;
-    span {
-      box-shadow: 0 0.75rem 0.75rem rgba(0, 0, 0, 0.2);
+    &.is-selected {
+      margin-top: 1.75rem;
+      span {
+        box-shadow: 0 0.75rem 0.75rem rgba(0, 0, 0, 0.2);
+      }
     }
   }
 }
@@ -2623,6 +2628,40 @@ html[data-direction="up"] {
       .contact-connection-background {
         left: 0;
         display: none;
+      }
+    }
+  }
+
+  .contact {
+    .contact-section {
+      .container {
+        margin-bottom: 0;
+        .flip-container {
+          max-width: calc(100% - 4rem);
+        }
+        .flipper {
+          height: 37.25rem;
+        }
+      }
+      .first-flip {
+        .flip-wrapper {
+          padding: 3rem;
+          .contact-title {
+            margin-bottom: 2.5rem;
+          }
+
+          .contact-buttons {
+            justify-content: center;
+            .contact-btn {
+              margin: 1rem;
+            }
+          }
+        }
+      }
+      .second-flip {
+        .flip-wrapper {
+          padding: 6.25rem 3rem;
+        }
       }
     }
   }

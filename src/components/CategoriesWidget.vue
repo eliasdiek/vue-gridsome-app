@@ -5,7 +5,7 @@
       :class="{ 'is-selected': selected === 'all' }"
       @click="onChange('all')"
     >
-      <span class="quarry-label all">ALL</span>
+      <span class="quarry-label all">ALL OF IT</span>
     </div>
     <div
       v-for="{ node } in categories"

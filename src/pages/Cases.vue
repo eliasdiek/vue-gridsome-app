@@ -33,7 +33,7 @@
               <v-card class="quarry-card">
                 <v-img
                   class="align-end"
-                  height="27rem"
+                  aspect-ratio="1"
                   :src="node.featuredMedia.sourceUrl"
                 />
                 <v-card-subtitle>
@@ -121,7 +121,7 @@ export default {
   data() {
     return {
       page: 1,
-      per_page: 3,
+      per_page: 9,
       selectedCategory: "all",
       images: {},
       selectedCases: []
@@ -138,6 +138,24 @@ export default {
   },
 
   methods: {
+    changePerpage: function() {
+      const vm = this;
+      let windowWidth = document.documentElement.clientWidth;
+      if (windowWidth < 960) {
+        vm.per_page = 6;
+      } else {
+        vm.per_page = 9;
+      }
+
+      window.addEventListener("resize", () => {
+        windowWidth = document.documentElement.clientWidth;
+        if (windowWidth < 960) {
+          vm.per_page = 6;
+        } else {
+          vm.per_page = 9;
+        }
+      });
+    },
     changeCategory: function(category) {
       this.selectedCategory = category;
       this.page = 1;
@@ -162,6 +180,7 @@ export default {
 
   mounted() {
     this.selectedCases = this.$page.cases.edges;
+    this.changePerpage();
   }
 };
 </script>
