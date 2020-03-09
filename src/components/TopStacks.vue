@@ -1,7 +1,7 @@
 <template>
   <v-container align-center class="quarry-section stacks-section">
     <h3 class="text-center h3">Our stack runs deep</h3>
-    <v-layout class="stacks-wrapper" data-aos="fade-right">
+    <v-layout class="stacks-wrapper" data-aos="fade-right" data-aos-once="true">
       <v-flex v-for="(item, i) in stacks" d-flex :key="i">
         <v-img
           contain

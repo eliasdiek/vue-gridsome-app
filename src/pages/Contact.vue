@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div>
+    <div class="contact">
       <div class="services-hero-section gradient-blue">
         <v-container data-aos="fade-right">
           <h1 class="h1">

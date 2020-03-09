@@ -1,13 +1,13 @@
 <template>
   <v-layout justify-center class="quarry-section notify-section">
     <div class="home-notify">
-      <div data-aos="fade-right" class="hey">Hey there!</div>
-      <div class="year-dash" data-aos="fade-down">
+      <div data-aos="fade-right" data-aos-once="true" class="hey">Hey there!</div>
+      <div class="year-dash" data-aos="fade-down" data-aos-once="true">
         <div class="dash"></div>
         <div class="year">Since 2016</div>
       </div>
     </div>
-    <v-flex data-aos="fade-down" class="home-notify-content">
+    <v-flex data-aos="fade-down" data-aos-once="true" class="home-notify-content">
       <p>
         We’re a globally distributed web and technology team with talent
         spanning every step of the product lifecycle. We’re dedicated to our

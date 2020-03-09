@@ -20,6 +20,14 @@ a {
   text-decoration: none;
 }
 
+.v-content__wrap {
+  >div {
+    &.contact {
+      margin-top: 0;
+    }
+  }
+}
+
 .h1 {
   color: #000000;
   font-family: Muli;
@@ -69,7 +77,13 @@ button.quarry-btn {
     background: #ffffff;
   }
 
+  .mx-3 {
+    margin-right: 15px!important;
+    margin-left: 15px!important;
+  }
+
   .v-list-item__title {
+    font-size: 1.125rem;;
     height: unset;
     line-height: unset;
   }
@@ -171,7 +185,7 @@ button.quarry-btn {
     &.contact {
       background: transparent;
       height: unset !important;
-      position: absolute;
+      position: fixed;
       z-index: 500;
       width: 100%;
       .menu-link {
@@ -531,7 +545,7 @@ button.quarry-btn {
     top: -5.875rem;
     width: 80%;
     max-width: 49rem;
-    padding: 6.75rem;
+    padding: 4.75rem;
     background-color: #ffffff;
     box-shadow: 0 0 1.25rem rgba(200, 200, 200, 0.6);
 
@@ -541,7 +555,7 @@ button.quarry-btn {
       font-size: 1.375rem;
       font-style: italic;
       line-height: 2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     .carousel-item {
@@ -552,10 +566,18 @@ button.quarry-btn {
         .v-avatar {
           width: 4.25rem !important;
           height: 4.25rem !important;
+          margin-right: 0;
+
+          @media screen and (max-width: 960px) {
+            width: 5.125rem !important;
+            height: 5.125rem !important;
+          }
         }
 
         &__content {
           margin-left: 1rem;
+          height: 81px;
+          margin-top: .5rem;
         }
       }
 
@@ -564,24 +586,23 @@ button.quarry-btn {
         font-family: Muli;
         font-size: 1.125rem;
         font-weight: 700;
-        line-height: 2rem;
+        line-height: 1.125rem;
       }
 
       .user-role {
         color: #333333;
         font-family: Montserrat;
-        font-size: 0.875rem;
-        font-weight: 400;
+        font-size: 0.8rem;
+        font-weight: 600;
         font-style: italic;
-        line-height: 2rem;
+        line-height: 0.875rem;
       }
 
       .user-position {
         color: #333333;
         font-family: Montserrat;
         font-size: 1rem;
-        font-weight: 400;
-        line-height: 2rem;
+        font-weight: 600;
       }
     }
   }
@@ -633,6 +654,23 @@ button.quarry-btn {
     }
   }
 }
+.contact {
+  .contact-section {
+    .container {
+      margin-top: -11.5rem;
+      @media screen and (max-width: 960px) {
+        margin-top: -24.5rem;
+      }
+    }
+  }
+
+.services-hero-section {
+  padding-top: 6.375rem;
+  @media screen and (max-width: 996px) {
+    padding-top: 6.375rem;
+  }
+}
+}
 
 .contact-section {
   .contact-connection-background {
@@ -643,6 +681,7 @@ button.quarry-btn {
     justify-content: center;
     margin-top: -11.5rem;
     margin-bottom: 12.75rem;
+
     .flip-container {
       max-width: 42rem;
       width: 100%;
@@ -650,12 +689,8 @@ button.quarry-btn {
     .flipper {
       height: 37.5rem;
       background-color: #ffffff;
-      box-shadow: 0 2.25rem 3.5rem 0.75rem rgba(0, 0, 0, 0.21);
+      box-shadow: 0 4rem 7rem 0 rgba(0, 0, 0, 0.45);
       text-align: center;
-    }
-
-    @media screen and (max-width: 960px) {
-      margin-top: -24.5rem;
     }
   }
 
@@ -914,6 +949,10 @@ button.quarry-btn {
 
 .services-hero-section {
   background: #000000;
+  padding-top: 6.375rem;
+  @media screen and (max-width: 996px) {
+    padding-top: 0;
+  }
   .container {
     padding: 7.25rem 0;
     .h1 {
@@ -1097,6 +1136,12 @@ button.quarry-btn {
   height: 68%;
   background: #fafafa;
   display: block;
+
+  @media screen and (max-width: 960px) {
+    top: 2rem;
+    left: 3%;
+    height: 82%;
+  }
 }
 
 .cases-connection-wrapper {
@@ -1139,6 +1184,8 @@ button.quarry-btn {
       font-family: Muli;
       font-size: 1.125rem;
       font-weight: 800;
+      margin-top: 0;
+      margin-bottom: auto;
     }
     .learn-more {
       padding: 1rem 3.25rem;
@@ -1828,44 +1875,52 @@ button.quarry-btn {
 }
 
 .margin-home-blog {
-  margin-top: 17.75rem;
+  margin-top: 17.75rem !important;
+
+  @media screen and (max-width: 968px) {
+    margin-top: 12.5rem !important;
+  }
 }
 .margin-home-notify {
-  margin-top: 18.25rem;
+  margin-top: 18.25rem !important;
 }
 .margin-home-stacks {
-  margin-top: 17.75rem;
+  margin-top: 17.75rem !important;
 }
 .margin-home-carousel {
-  margin-top: 21.5rem;
+  margin-top: 21.5rem !important;
 }
 .margin-home-contact {
-  margin-top: 18.5rem;
+  margin-top: 18.5rem !important;
 }
 .margin-services-block {
-  margin-top: 5rem;
+  margin-top: 5rem !important;
 }
 .margin-services-detail {
-  margin-top: 12.5rem;
+  margin-top: 12.5rem !important;
 }
 .margin-services-carousel {
-  margin-top: 8rem;
+  margin-top: 8rem !important;
 }
 .margin-services-contact {
-  margin-top: 11rem;
+  margin-top: 11rem !important;
   &.contact-page {
-    margin-top: 19.25rem;
+    margin-top: 19.25rem !important;
   }
 }
 .margin-cases-labels {
-  margin-top: 1.5rem;
+  margin-top: 1.5rem !important;
 }
 .margin-cases-cards {
-  margin-top: 3.75rem;
+  margin-top: 3.75rem !important;
 }
 
 .team-hero-section {
+  padding-top: 6.375rem;
   background: #000000;
+  @media screen and (max-width: 968px) {
+    padding-top: 0;
+  }
   .container {
     padding: 7.25rem 0;
     .h1 {
@@ -1892,6 +1947,10 @@ button.quarry-btn {
     max-width: 85.6% !important;
     margin-left: auto;
     margin-right: 0;
+
+    @media screen and (max-width: 960px) {
+      max-width: 95% !important;
+    }
   }
 }
 
@@ -1923,11 +1982,23 @@ button.quarry-btn {
   .team-values-background {
     position: absolute;
     left: 0;
-    width: 80%;
     height: 100%;
     margin-left: 0;
     margin-right: auto;
     background-color: #fafafa;
+
+    @media screen and (min-width: 1024px) {
+      width: 87%
+    }
+    @media screen and (min-width: 1540px) {
+      width: 87%
+    }
+    @media screen and (min-width: 1410px) {
+      width: 85%
+    }
+    @media screen and (min-width: 1560px) {
+      width: 80%
+    }
   }
   .team-values-section-wrapper {
     position: relative;
@@ -1972,6 +2043,10 @@ button.quarry-btn {
   max-width: 100%;
   margin-top: -7.5rem;
   padding-bottom: 8.1rem;
+  @media screen and (max-width: 600px) {
+    margin-top: -21.5rem;
+    padding-bottom: 12.1rem;
+  }
   .team-members-section-wrapper {
     padding-top: 13.5rem;
 
@@ -1984,10 +2059,24 @@ button.quarry-btn {
       line-height: 3.25rem;
       text-align: center;
     }
+    @media screen and (max-width: 600px) {
+      padding-top: 26.5rem;
+
+      .block-title {
+        margin-bottom: 1.95rem;
+      }
+    }
 
     .section-body {
+      @media screen and (max-width: 960px) {
+        padding: .6rem;
+      }
       .person {
         padding: 1.09375rem;
+
+        @media screen and (max-width: 960px) {
+          padding: .6rem;
+        }
         .person-photo {
           img {
             width: 100%;
@@ -1997,21 +2086,28 @@ button.quarry-btn {
           padding: 1rem;
           background: #fff;
           color: #000;
+          font-size: 1rem;
+
+          @media screen and (max-width: 960px) {
+            font-size: .75rem;
+            padding: .75rem;
+          }
 
           .first-name {
             font-family: "Muli";
-            font-size: 1.25rem;
             font-weight: 900;
           }
 
           .last-name {
             font-family: "Muli";
-            font-size: 1.25rem;
             font-weight: 400;
           }
 
           p {
             margin-bottom: 0;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
           }
         }
       }
@@ -2022,6 +2118,10 @@ button.quarry-btn {
 .team-distributed-section {
   position: relative;
   z-index: 1;
+
+  @media screen and (max-width: 600px) {
+    margin-top: -8rem;
+  }
   .team-distributed-background {
     position: absolute;
     right: 0;
@@ -2034,6 +2134,7 @@ button.quarry-btn {
   .team-distributed-section-wrapper {
     position: relative;
     padding: 5rem 13.5rem;
+
     .detail-title {
       color: #000000;
       font-family: Muli;
@@ -2059,6 +2160,41 @@ button.quarry-btn {
       }
     }
   }
+
+  @media screen and (max-width: 600px) {
+    .team-distributed-background {
+      width: 91.5%;
+    }
+    .team-distributed-section-wrapper {
+      padding: 3rem 3.5rem 3rem 4.125rem;
+
+      .detail-title {
+        color: #000000;
+        font-family: Muli;
+        font-size: 2.4rem;
+        font-weight: 400;
+        line-height: 3.5rem;
+        margin-bottom: 2.125rem;
+      }
+      .distributed-detail-block {
+        padding: 0 0 0 3rem;
+        p {
+          width: auto;
+          margin: auto;
+          color: #000000;
+          font-family: Montserrat;
+          font-size: 1.125rem;
+          font-weight: 300;
+          margin-bottom: 0.75rem;
+  
+          &.sub-title {
+            font-weight: 400;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
 }
 
 .team-map-section {
@@ -2069,7 +2205,7 @@ button.quarry-btn {
     margin-left: 0;
     margin-right: auto;
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 960px) {
       max-width: 100% !important;
     }
   }
@@ -2087,27 +2223,35 @@ button.quarry-btn {
 html[data-direction="down"] {
   .v-application {
     .v-toolbar {
+      max-height: 5rem;
+      animation: hidetoolbar 0.5s ease-in-out forwards;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
       &__content {
-        max-height: 0;
-        overflow-y: hidden;
+        padding: 1rem 2rem;
       }
     }
   }
 }
 
+.v-toolbar {
+  top:0px;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+
 html[data-direction="up"] {
   .v-application {
     .v-toolbar {
-      position: fixed;
-      width: 100%;
-      z-index: 1000;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
       max-height: 5rem;
       overflow: hidden;
       animation: showtoolbar 0.5s ease-in-out;
 
       &__content {
-        padding: 1rem 0;
+        padding: 1rem 2rem;
       }
 
       &.contact {
@@ -2147,15 +2291,25 @@ html[data-direction="up"] {
 
 @keyframes showtoolbar {
   0% {
-    max-height: 0;
+    top: -5rem;
   }
   100% {
-    max-height: 100px;
+    top: 0rem;
+  }
+}
+
+@keyframes hidetoolbar {
+  0% {
+    top: 0rem;
+  }
+  100% {
+    top: -5rem;
   }
 }
 
 .gradient-blue {
   background: $quarry-blue-color;
+  z-index: 1001;
   background: -moz-linear-gradient(
     -45deg,
     $quarry-blue-color 0%,
@@ -2187,10 +2341,6 @@ html[data-direction="up"] {
     $quarry-blue-color 0%,
     $quarry-lightblue-color 100%
   );
-
-  @media screen and (min-width: 960px) {
-    padding-top: 6.375rem;
-  }
 }
 
 /* responsive */
@@ -2229,8 +2379,27 @@ html[data-direction="up"] {
     font-size: 2rem;
   }
 
+  .v-content__wrap {
+    >div {
+      margin-top: 0;
+  
+      &.contact {
+        margin-top: 0;
+      }
+    }
+  }
+
   .v-application {
     .v-toolbar {
+
+        top:0px;
+        width: 100%;
+        position: fixed;
+        z-index: 1000;
+        overflow: hidden;
+
+      transition: all 0.5s ease-in-out;
+
       &__content {
         padding: 2.5rem 2rem;
       }
@@ -2284,7 +2453,7 @@ html[data-direction="up"] {
       }
       .more-cases {
         margin-top: 0;
-        padding: 1.75rem 6.25rem;
+        padding: 1rem 4.25rem;
       }
     }
 
@@ -2367,7 +2536,7 @@ html[data-direction="up"] {
       padding: 4.5rem 3rem;
 
       .carousel-title {
-        font-size: 1.75rem;
+        font-size: 1rem;
       }
 
       .carousel-item {
@@ -2387,7 +2556,7 @@ html[data-direction="up"] {
         }
 
         .user-role {
-          font-size: 1.125rem;
+          font-size: 1rem;
         }
 
         .user-position {
@@ -2462,9 +2631,9 @@ html[data-direction="up"] {
 
   .footer-section {
     .footer-wrapper {
-      height: 60.5rem;
-      padding: 11.75rem 4.75rem 6rem;
-      background: linear-gradient(180deg, #000000 85%, #ffffff 15%);
+      height: 64.5rem;
+      padding: 11.75rem 2.75rem 6rem;
+      background: linear-gradient(180deg, #000000 80%, #ffffff 20%);
       display: flex;
       flex-direction: column;
 
@@ -2507,7 +2676,7 @@ html[data-direction="up"] {
 
       .link-block {
         display: block;
-        margin-bottom: 8.75rem;
+        margin-bottom: 6.5rem;
         order: 3;
 
         .layout {
@@ -2531,7 +2700,7 @@ html[data-direction="up"] {
 
         .copyright {
           margin-left: 0;
-          margin-top: 2.5rem;
+          margin-top: 1rem;
         }
       }
     }
@@ -2671,7 +2840,7 @@ html[data-direction="up"] {
         font-size: 2.4rem;
         font-weight: 400;
         line-height: 3.5rem;
-        text-align: center;
+        margin-left: 3rem;
       }
       .values-detail-block {
         padding: 3rem;
@@ -2701,44 +2870,9 @@ html[data-direction="up"] {
     }
   }
 
-  .team-distributed-section {
-    .team-distributed-background {
-      width: 95%;
-    }
-    .team-distributed-section-wrapper {
-      padding: 3rem 2.5rem;
-      .detail-title {
-        color: #000000;
-        font-family: Muli;
-        font-size: 2.4rem;
-        font-weight: 400;
-        line-height: 3.5rem;
-        text-align: center;
-      }
-      .distributed-detail-block {
-        padding: 1rem 0;
-        p {
-          width: auto;
-          margin: auto;
-          color: #000000;
-          font-family: Montserrat;
-          font-size: 1.125rem;
-          font-weight: 300;
-          margin-bottom: 0.75rem;
-
-          &.sub-title {
-            font-weight: 400;
-            margin-bottom: 1rem;
-            text-align: center;
-          }
-        }
-      }
-    }
-  }
-
   .team-map-section {
     max-width: 100%;
-    margin-top: 1rem;
+    margin-top: -2rem;
     .team-map-section-container {
       max-width: 100%;
       margin: 0 auto;
@@ -2989,39 +3123,39 @@ html[data-direction="up"] {
   }
 
   .margin-home-blog {
-    margin-top: 12.5rem;
+    margin-top: 10.5rem !important;
   }
   .margin-home-notify {
-    margin-top: 8.5rem;
+    margin-top: 8.5rem !important;
   }
   .margin-home-stacks {
-    margin-top: 8.5rem;
+    margin-top: 5.5rem !important;
   }
   .margin-home-carousel {
-    margin-top: 10.75rem;
+    margin-top: 8.75rem !important;
   }
   .margin-services-block {
-    margin-top: 3.25rem;
+    margin-top: 3.25rem !important;
   }
   .margin-services-detail {
-    margin-top: 10rem;
+    margin-top: 10rem !important;
   }
   .margin-services-carousel {
-    margin-top: 5rem;
+    margin-top: 5rem !important;
   }
 
-  html[data-direction="up"] {
-    .v-application {
-      .v-toolbar {
-        position: relative;
-        box-shadow: none;
-        z-index: 0;
-        &__content {
-          padding-top: 1rem 2.5rem;
-        }
-      }
-    }
-  }
+  // html[data-direction="up"] {
+  //   .v-application {
+  //     .v-toolbar {
+  //       position: relative;
+  //       box-shadow: none;
+  //       z-index: 0;
+  //       &__content {
+  //         padding-top: 1rem 2.5rem;
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 @media (max-width: 600px) {
@@ -3045,7 +3179,7 @@ html[data-direction="up"] {
         .contact-buttons {
           .contact-btn {
             margin: 0.2rem;
-            padding: 0.5rem 1rem;
+            padding: 1rem;
           }
         }
       }
@@ -3059,9 +3193,24 @@ html[data-direction="up"] {
       padding: 1rem 1rem;
     }
   }
+
+  .team-values-section {
+    .team-values-background {
+      position: absolute;
+      left: 0;
+      width: 95%;
+      height: 100%;
+      margin-left: 0;
+      margin-right: auto;
+      background-color: #fafafa;
+    }
+  }
 }
 
 @media (max-width: 400px) {
+  .v-content {
+    margin-top: auto;
+  }
   .casedetail-summary-blocks {
     .block-2 {
       flex-direction: column;
@@ -3074,6 +3223,84 @@ html[data-direction="up"] {
     }
     .block-5 {
       margin-left: 0;
+    }
+  }
+}
+
+.nav-is-selected {
+  position: absolute;
+  bottom: -.2rem;
+  height: 0.125rem;
+  background: #000;
+  width: 100%;
+  &.is-inverse-selected{
+    background: white;
+  }
+}
+.nav-is-selected::after{
+  z-index: 100;
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -2.885px ;
+  top:-1px;
+  width: 5.77px;
+  height: 5.77px;
+  background: #FFFFFF;
+  border-right:0.125rem solid #000;
+  border-bottom:0.125rem solid #000;
+  transform:rotate(45deg);
+}
+
+.is-inverse-selected::after {
+  background: #000 !important;
+  border-right:0.125rem solid #fff;
+  border-bottom:0.125rem solid #fff;
+}
+.contact .is-inverse-selected::after {
+  background: #4e99e0 !important;
+}
+@media screen and (max-width: 968px) {
+  .home {
+    .hero-section {
+      margin-bottom: 0;
+      margin-top: 13.75rem;
+      padding: 0 1.175rem;
+    }
+    .case-list {
+      padding: 0 1.175rem;
+    }
+    .notify-section {
+      padding: 0 1.875rem;
+    }
+    .stacks-section {
+      padding: 0 2.125rem;
+    }
+    .carousel-section .carousel-content {
+      top: -9.175rem;
+      width: 80%;
+      padding: 4.5rem 3rem;
+    }
+  }
+  .blog {
+    .services-hero-section {
+      padding-top: 5.359rem;
+    }
+  }
+  .team {
+    .team-hero-section {
+      padding-top: 5.359rem;
+    }
+  }
+  .cases {
+    .services-hero-section {
+      padding-top: 5.359rem;
+    }
+  }
+  .services {
+    .services-hero-section {
+      padding-top: 5.359rem;
     }
   }
 }

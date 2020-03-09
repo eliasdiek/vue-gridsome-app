@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div>
+    <div class="cases">
       <div class="services-hero-section">
         <v-container data-aos="fade-right">
           <h1 class="h1">
@@ -87,6 +87,7 @@
         node {
           id
           title
+          date
           featuredMedia {
             id
             sourceUrl

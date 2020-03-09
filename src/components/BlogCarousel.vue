@@ -61,39 +61,30 @@ export default {
       carousels: [
         {
           name: "Shervin Mohseni",
-          role: "Founder",
-          position: "The Source of All. We R CBD",
-          image: require("~/assets/images/image-carousel1.jpg"),
-          avatar: require("~/assets/images/image-shervin.jpeg"),
+          role: "Co Founder",
+          position: "The Source of All, We 'R CBD",
+          image: require("~/assets/images/testimonials/CBD-R-Us-Slide@2x.jpg"),
+          avatar: require("~/assets/images/testimonials/Shervin-Mohseni@2x.jpg"),
           content:
-            "Branding an Oregonian coworking startup in a burgeoning small town"
+            "It's been a pleasure working with Brendan and the Quarry team. They are extremely helpful and responsive."
         },
         {
-          name: "Shervin Mohseni",
-          role: "Founder",
-          position: "The Source of All. We R CBD",
-          image: require("~/assets/images/image-carousel1.jpg"),
-          avatar: require("~/assets/images/image-shervin.jpeg"),
+          name: "Zack Fleishman",
+          role: "COO",
+          position: "Shark Wheel",
+          image: require("~/assets/images/testimonials/Mompou@2x.jpg"),
+          avatar: require("~/assets/images/testimonials/Zack-Fleishman.jpg"),
           content:
-            "Branding an Oregonian coworking startup in a burgeoning small town"
+            "Having aired on Shark Tank, we had a lot of traffic and needed to meet the demands of a forward-thinking company. Quarry worked expeditiously to make sure all of our website needs were addressed. Their professionalism, creativity and friendliness will keep us coming back over-and-over again."
         },
         {
-          name: "Shervin Mohseni",
-          role: "Founder",
-          position: "The Source of All. We R CBD",
-          image: require("~/assets/images/image-carousel1.jpg"),
-          avatar: require("~/assets/images/image-shervin.jpeg"),
+          name: "Tony Martinez",
+          role: "Owner",
+          position: "MOMPOU, Spanish Tavern, Barcelona Cooking",
+          image: require("~/assets/images/testimonials/Shark-Wheel-Slide@2x.jpg"),
+          avatar: require("~/assets/images/testimonials/Tony-Martinez.jpg"),
           content:
-            "Branding an Oregonian coworking startup in a burgeoning small town"
-        },
-        {
-          name: "Shervin Mohseni",
-          role: "Founder",
-          position: "The Source of All. We R CBD",
-          image: require("~/assets/images/image-carousel1.jpg"),
-          avatar: require("~/assets/images/image-shervin.jpeg"),
-          content:
-            "Branding an Oregonian coworking startup in a burgeoning small town"
+            "We have been working with Quarry for several years on multiple businesses. Their attention to detail, quick response, and the quality of their work is second to none. We have been very happy with the results on all our initiatives and projects. We highly recommend them!"
         }
       ]
     };

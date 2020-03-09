@@ -24,10 +24,14 @@
             :key="i"
             :to="link.to"
             class="hidden-sm-and-down menu-link mx-3"
+
           >
             <v-list-item-title @click="updateLink(link.to)">
               {{ link.text }}
+
             </v-list-item-title>
+            <div :class="{'nav-is-selected':link.to.substring(1) === activeLink,
+              'is-inverse-selected':isDark && link.to.substring(1) === activeLink}"></div>
           </g-link>
         </v-toolbar-items>
       </v-layout>
@@ -43,6 +47,9 @@ export default {
 
   computed: {
     ...mapGetters(["links"]),
+    isDark: function(){
+      return ["services", "cases", "blog", "team", "contact"].includes(this.activeLink);
+    },
     logo: function() {
       if (
         ["services", "cases", "blog", "contact", "team"].includes(

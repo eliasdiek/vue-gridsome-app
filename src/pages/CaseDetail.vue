@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div>
+    <div class="case-detail">
       <div class="casedetail-hero-section">
         <v-container data-aos="fade-right">
           <h1 class="h1">

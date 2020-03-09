@@ -26,7 +26,6 @@ export default new Vuex.Store({
     toggleDrawer: state => (state.drawer = !state.drawer),
     setActiveLink: (state, payload) => (state.activeLink = payload),
     setActiveCategory: (state, payload) => {
-      console.log("payload: " + payload);
       state.activeCategory = payload;
     }
   },

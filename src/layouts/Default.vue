@@ -34,11 +34,10 @@ export default {
   methods: {
     handleScroll() {
       const temp = parseInt(document.documentElement.dataset.scroll);
-      const isCaseDetail = this.$route.path.indexOf("case-detail") > -1;
 
       if (window.scrollY === 0)
         document.documentElement.dataset.direction = "init";
-      else if (temp > window.scrollY && window.scrollY > 0 && !isCaseDetail)
+      else if (temp > window.scrollY && window.scrollY > 0)
         document.documentElement.dataset.direction = "up";
       else document.documentElement.dataset.direction = "down";
       document.documentElement.dataset.scroll = window.scrollY;

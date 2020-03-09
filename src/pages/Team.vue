@@ -18,6 +18,8 @@
           <v-img
             class="team-hero-image"
             :src="team_hero_image"
+            :cover="true"
+            aspect-ratio="1"
             width="100%"
             max-height="739"
           />
@@ -94,18 +96,16 @@
         <v-container class="team-members-section-wrapper">
           <h3 class="block-title">The team</h3>
           <div class="section-body">
-            <v-container>
               <v-row no-gutters justify="center">
                 <v-col
                   cols="6"
                   sm="3"
-                  v-for="(person, index) in persons"
+                  v-for="(person, index) in members"
                   :key="index"
                 >
                   <Person :person="person" />
                 </v-col>
               </v-row>
-            </v-container>
           </div>
         </v-container>
       </div>
@@ -142,6 +142,8 @@
             :options="{
               mapTypeControl: false,
               streetViewControl: false,
+              zoomControl: showZoomControl,
+              fullscreenControl: false,
               styles: mapStyle,
               zoomControlOptions: { position: zoomControlPosotion },
               minZoom: 1,
@@ -156,6 +158,7 @@
                 :draggable="false"
                 :key="index"
                 :icon="mapIcon"
+                size="10x15"
                 @click="center = person.position"
               ></gmap-marker>
             </gmap-cluster>
@@ -202,6 +205,7 @@ export default {
       map: require("~/assets/images/map.png"),
       mapTypeId: "roadmap",
       initialZoomSize: 2.6,
+      showZoomControl: true,
       overlayImg: require("~/assets/images/map.png"),
       persons: [
         {
@@ -209,6 +213,7 @@ export default {
           lastName: "Binger",
           role: "Founder / Design Director / Architect",
           photo: require("~/assets/images/members/brendan-binger.png"),
+          isFake: false,
           position: {
             lat: 43.289614,
             lng: -121.648436
@@ -219,6 +224,7 @@ export default {
           lastName: "Karki",
           role: "Sr Engineer",
           photo: require("~/assets/images/members/dennish-karki.png"),
+          isFake: false,
           position: {
             lat: 2.060059,
             lng: -76.121094
@@ -229,9 +235,32 @@ export default {
           lastName: "Sanguinetti",
           role: "Sr Visual Designer",
           photo: require("~/assets/images/members/valentin-sanguinetti.png"),
+          isFake: false,
           position: {
             lat: -33.764978,
             lng: -56.082029
+          }
+        },
+        {
+          firstName: null,
+          lastName: null,
+          role: null,
+          photo: null,
+          isFake: true,
+          position: {
+            lat: 40.010490,
+            lng: -105.261952
+          }
+        },
+        {
+          firstName: null,
+          lastName: null,
+          role: null,
+          photo: null,
+          isFake: true,
+          position: {
+            lat: 29.456029,
+            lng: -98.543276
           }
         },
         {
@@ -239,6 +268,7 @@ export default {
           lastName: "Bochulyak",
           role: "Sr Product Designer",
           photo: require("~/assets/images/members/oleg-bochulyakr.png"),
+          isFake: false,
           position: {
             lat: 51.5074,
             lng: 0.1278
@@ -249,6 +279,7 @@ export default {
           lastName: "Bernotti",
           role: "Identity & Brand Systems Designer",
           photo: require("~/assets/images/members/federico-bernotti.png"),
+          isFake: false,
           position: {
             lat: 41.865892,
             lng: 13.0
@@ -259,6 +290,7 @@ export default {
           lastName: "Paudel",
           role: "Engineer",
           photo: require("~/assets/images/members/vinay-paudel.png"),
+          isFake: false,
           position: {
             lat: 50.032809,
             lng: 24.953124
@@ -269,6 +301,7 @@ export default {
           lastName: "Maloo",
           role: "Sr Engineer & Systems Architect",
           photo: require("~/assets/images/members/puneet-maloo.png"),
+          isFake: false,
           position: {
             lat: 50.816705,
             lng: 31.105468
@@ -280,6 +313,7 @@ export default {
           name: "Dmitry Kutuzov",
           role: "PPC Analyst",
           photo: require("~/assets/images/members/dmitry-kutuzov.png"),
+          isFake: false,
           position: {
             lat: 48.976983,
             lng: 38.048829
@@ -290,6 +324,7 @@ export default {
           lastName: "Fishbein",
           role: "Data Engineer",
           photo: require("~/assets/images/members/evgeniy-fishbein.png"),
+          isFake: false,
           position: {
             lat: 48.976983,
             lng: 38.048829
@@ -300,6 +335,7 @@ export default {
           lastName: "Matavastros",
           role: "Engineer",
           photo: require("~/assets/images/members/kiros-matavastros.png"),
+          isFake: false,
           position: {
             lat: 48.976983,
             lng: 38.048829
@@ -310,6 +346,7 @@ export default {
           lastName: "Burdukin",
           role: "Sr Engineer",
           photo: require("~/assets/images/members/nick-burdukin.png"),
+          isFake: false,
           position: {
             lat: 48.976983,
             lng: 38.048829
@@ -320,6 +357,7 @@ export default {
           lastName: "Guba",
           role: "Product Designer",
           photo: require("~/assets/images/members/serg-guba.png"),
+          isFake: false,
           position: {
             lat: 57.77189,
             lng: 35.499999
@@ -330,6 +368,7 @@ export default {
           lastName: "Pronin",
           role: "Engineer",
           photo: require("~/assets/images/members/alexey-pronin.png"),
+          isFake: false,
           position: {
             lat: 56.43548,
             lng: 38.433593
@@ -340,6 +379,7 @@ export default {
           lastName: "Sheftelev",
           role: "Engineer",
           photo: require("~/assets/images/members/dmitry-sheftelev.png"),
+          isFake: false,
           position: {
             lat: 22.548598,
             lng: 86.300778
@@ -350,19 +390,20 @@ export default {
           lastName: "Kumar Jain",
           role: "Engineer",
           photo: require("~/assets/images/members/naveen-kumar.png"),
+          isFake: false,
           position: {
             lat: 27.172086,
             lng: 86.300778
           }
         }
       ],
-      mapIcon: require("~/assets/images/marker.png"),
+      mapIcon: require("~/assets/images/pin.svg"),
       clusterStyles: [
         {
           textColor: "black",
-          url: require("~/assets/images/cluster-icon.png"),
+          url: require("~/assets/images/cluster-icon.svg"),
           height: 15,
-          width: 13.5
+          width: 14.5
         }
       ],
       center: {
@@ -657,22 +698,36 @@ export default {
       ]
     };
   },
+  computed: {
+    members: function() {
+      let members = []
+      for(let index in this.persons) {
+        if(!this.persons[index].isFake)
+          members.push(this.persons[index])
+      }
+      return members
+    }
+  },
   methods: {
     adjustZoomSize() {
-      const vm = this;
+      const vm = this
       let windowWidth = document.documentElement.clientWidth;
       if (windowWidth < 600) {
-        vm.initialZoomSize = 1;
+        vm.initialZoomSize = 1
+        vm.showZoomControl = false
       } else {
-        vm.initialZoomSize = 2.6;
+        vm.initialZoomSize = 2.6
+        vm.showZoomControl = true
       }
 
       window.addEventListener("resize", () => {
         windowWidth = document.documentElement.clientWidth;
         if (windowWidth < 600) {
-          vm.initialZoomSize = 1;
+          vm.initialZoomSize = 1
+          vm.showZoomControl = false
         } else {
-          vm.initialZoomSize = 2.6;
+          vm.initialZoomSize = 2.6
+          vm.showZoomControl = true
         }
       });
     }

@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div>
+    <div class="blog">
       <div class="services-hero-section">
         <v-container data-aos="fade-right">
           <h1 class="h1">

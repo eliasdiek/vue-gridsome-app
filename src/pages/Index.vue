@@ -1,8 +1,8 @@
 <template>
   <Layout>
-    <div>
+    <div class="home">
       <v-container class="quarry-container">
-        <v-container class="quarry-section hero-section" data-aos="fade-right">
+        <v-container class="quarry-section hero-section" data-aos="fade-right" data-aos-once="true">
           <h1 class="text-center h1">
             We craft digital products <br />
             that satisfy, empower, and convert.
@@ -21,17 +21,17 @@
         <v-flex
           class="text-center quarry-section blog-section margin-home-blog"
         >
-          <v-list>
-            <template v-for="(item, index) in topBlogs">
-              <top-blog :key="index" :blog="item" />
+          <v-list class="case-list">
+            <template v-for="(item, index) in selectedCases">
+              <top-blog :key="index" :blog="item.node" />
               <v-divider
                 class="top-blog-divider"
-                v-if="index + 1 < topBlogs.length"
+                v-if="index + 1 < selectedCases.length"
                 :key="`divider-${index}`"
               ></v-divider>
             </template>
           </v-list>
-          <v-btn class="quarry-btn btn-primary more-cases">More Cases</v-btn>
+          <v-btn class="quarry-btn btn-primary more-cases" @click="() => {$router.push('/cases')}">More Cases</v-btn>
         </v-flex>
         <home-notify class="margin-home-notify" />
       </v-container>
@@ -42,6 +42,43 @@
     </div>
   </Layout>
 </template>
+
+<static-query>
+  query {
+    allWordPressCasecategory(limit: 100) {
+      edges {
+        node {
+          id
+          title
+          slug
+        }
+      }
+    }
+  }
+</static-query>
+
+<page-query>
+  query {
+    cases: allWordPressCases(sortBy: "date", order: DESC, limit: 3) {
+      edges {
+        node {
+          id
+          title
+          date
+          featuredMedia {
+            id
+            sourceUrl
+          }
+          casecategory {
+            id
+            title
+            slug
+          }
+        }
+      }
+    }
+  }
+</page-query>
 
 <script>
 import BlogCarousel from "../components/BlogCarousel";
@@ -66,41 +103,20 @@ export default {
   },
   data() {
     return {
-      topBlogs: [
-        {
-          label: "identity",
-          title:
-            "Branding an Oregonian coworking startup in a burgeoning small town",
-          date: "11.09.19",
-          image: require("~/assets/images/image-case1.jpg"),
-          link: "#"
-        },
-        {
-          label: "ecommerce",
-          title:
-            "Launching a Shark Tank brand on Shopify to $130k revenue in 24 hours",
-          date: "11.09.19",
-          image: require("~/assets/images/image-case2.jpg"),
-          link: "#"
-        },
-        {
-          label: "app",
-          title:
-            "Building a Magento 2 React Progressive Web App store for a foodservice supplier",
-          date: "11.09.19",
-          image: require("~/assets/images/image-case3.jpg"),
-          link: "#"
-        }
-      ]
+      selectedCases: null
     };
   },
   methods: {
     gotoCases: function() {
       window.scrollTo({
-        top: 800,
+        top: 1080,
         behavior: "smooth"
       });
     }
+  },
+  mounted() {
+    this.selectedCases = this.$page.cases.edges;
+    console.log('[selectedCases]',this.selectedCases)
   }
 };
 </script>
