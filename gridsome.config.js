@@ -15,23 +15,23 @@ module.exports = {
       }
     },
     {
-      use: 'gridsome-plugin-pwa',
-        options: {
-            title: 'Quarry',
-            startUrl: '/',
-            display: 'standalone',
-            statusBarStyle: 'default',
-            manifestPath: 'manifest.json',
-            disableServiceWorker: false,
-            serviceWorkerPath: 'service-worker.js',
-            cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
-            shortName: 'Quarry',
-            themeColor: '#000000',
-            backgroundColor: '#000000',
-            icon: 'src/favicon.png', // must be provided like 'src/favicon.png'
-            msTileImage: '',
-            msTileColor: '#666600'
-        }
+      use: "gridsome-plugin-pwa",
+      options: {
+        title: "Quarry",
+        startUrl: "/",
+        display: "standalone",
+        statusBarStyle: "default",
+        manifestPath: "manifest.json",
+        disableServiceWorker: false,
+        serviceWorkerPath: "service-worker.js",
+        cachedFileTypes: "js,json,css,html,png,jpg,jpeg,svg",
+        shortName: "Quarry",
+        themeColor: "#000000",
+        backgroundColor: "#000000",
+        icon: "src/favicon.png", // must be provided like 'src/favicon.png'
+        msTileImage: "",
+        msTileColor: "#666600"
+      }
     }
   ],
   chainWebpack(config, { isServer }) {

@@ -96,16 +96,16 @@
         <v-container class="team-members-section-wrapper">
           <h3 class="block-title">The team</h3>
           <div class="section-body">
-              <v-row no-gutters justify="center">
-                <v-col
-                  cols="6"
-                  sm="3"
-                  v-for="(person, index) in members"
-                  :key="index"
-                >
-                  <Person :person="person" />
-                </v-col>
-              </v-row>
+            <v-row no-gutters justify="center">
+              <v-col
+                cols="6"
+                sm="3"
+                v-for="(person, index) in members"
+                :key="index"
+              >
+                <Person :person="person" />
+              </v-col>
+            </v-row>
           </div>
         </v-container>
       </div>
@@ -248,7 +248,7 @@ export default {
           photo: null,
           isFake: true,
           position: {
-            lat: 40.010490,
+            lat: 40.01049,
             lng: -105.261952
           }
         },
@@ -700,34 +700,33 @@ export default {
   },
   computed: {
     members: function() {
-      let members = []
-      for(let index in this.persons) {
-        if(!this.persons[index].isFake)
-          members.push(this.persons[index])
+      let members = [];
+      for (let index in this.persons) {
+        if (!this.persons[index].isFake) members.push(this.persons[index]);
       }
-      return members
+      return members;
     }
   },
   methods: {
     adjustZoomSize() {
-      const vm = this
+      const vm = this;
       let windowWidth = document.documentElement.clientWidth;
       if (windowWidth < 600) {
-        vm.initialZoomSize = 1
-        vm.showZoomControl = false
+        vm.initialZoomSize = 1;
+        vm.showZoomControl = false;
       } else {
-        vm.initialZoomSize = 2.6
-        vm.showZoomControl = true
+        vm.initialZoomSize = 2.6;
+        vm.showZoomControl = true;
       }
 
       window.addEventListener("resize", () => {
         windowWidth = document.documentElement.clientWidth;
         if (windowWidth < 600) {
-          vm.initialZoomSize = 1
-          vm.showZoomControl = false
+          vm.initialZoomSize = 1;
+          vm.showZoomControl = false;
         } else {
-          vm.initialZoomSize = 2.6
-          vm.showZoomControl = true
+          vm.initialZoomSize = 2.6;
+          vm.showZoomControl = true;
         }
       });
     }

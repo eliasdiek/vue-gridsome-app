@@ -21,7 +21,7 @@ a {
 }
 
 .v-content__wrap {
-  >div {
+  > div {
     &.contact {
       margin-top: 0;
     }
@@ -78,12 +78,12 @@ button.quarry-btn {
   }
 
   .mx-3 {
-    margin-right: 15px!important;
-    margin-left: 15px!important;
+    margin-right: 15px !important;
+    margin-left: 15px !important;
   }
 
   .v-list-item__title {
-    font-size: 1.125rem;;
+    font-size: 1.125rem;
     height: unset;
     line-height: unset;
   }
@@ -577,7 +577,7 @@ button.quarry-btn {
         &__content {
           margin-left: 1rem;
           height: 81px;
-          margin-top: .5rem;
+          margin-top: 0.5rem;
         }
       }
 
@@ -664,12 +664,12 @@ button.quarry-btn {
     }
   }
 
-.services-hero-section {
-  padding-top: 6.375rem;
-  @media screen and (max-width: 996px) {
+  .services-hero-section {
     padding-top: 6.375rem;
+    @media screen and (max-width: 996px) {
+      padding-top: 6.375rem;
+    }
   }
-}
 }
 
 .contact-section {
@@ -1988,16 +1988,16 @@ button.quarry-btn {
     background-color: #fafafa;
 
     @media screen and (min-width: 1024px) {
-      width: 87%
+      width: 87%;
     }
     @media screen and (min-width: 1540px) {
-      width: 87%
+      width: 87%;
     }
     @media screen and (min-width: 1410px) {
-      width: 85%
+      width: 85%;
     }
     @media screen and (min-width: 1560px) {
-      width: 80%
+      width: 80%;
     }
   }
   .team-values-section-wrapper {
@@ -2069,13 +2069,13 @@ button.quarry-btn {
 
     .section-body {
       @media screen and (max-width: 960px) {
-        padding: .6rem;
+        padding: 0.6rem;
       }
       .person {
         padding: 1.09375rem;
 
         @media screen and (max-width: 960px) {
-          padding: .6rem;
+          padding: 0.6rem;
         }
         .person-photo {
           img {
@@ -2089,8 +2089,8 @@ button.quarry-btn {
           font-size: 1rem;
 
           @media screen and (max-width: 960px) {
-            font-size: .75rem;
-            padding: .75rem;
+            font-size: 0.75rem;
+            padding: 0.75rem;
           }
 
           .first-name {
@@ -2186,7 +2186,7 @@ button.quarry-btn {
           font-size: 1.125rem;
           font-weight: 300;
           margin-bottom: 0.75rem;
-  
+
           &.sub-title {
             font-weight: 400;
             margin-bottom: 0;
@@ -2234,13 +2234,12 @@ html[data-direction="down"] {
 }
 
 .v-toolbar {
-  top:0px;
+  top: 0px;
   width: 100%;
   position: fixed;
   z-index: 1000;
   overflow: hidden;
 }
-
 
 html[data-direction="up"] {
   .v-application {
@@ -2380,9 +2379,9 @@ html[data-direction="up"] {
   }
 
   .v-content__wrap {
-    >div {
+    > div {
       margin-top: 0;
-  
+
       &.contact {
         margin-top: 0;
       }
@@ -2391,12 +2390,11 @@ html[data-direction="up"] {
 
   .v-application {
     .v-toolbar {
-
-        top:0px;
-        width: 100%;
-        position: fixed;
-        z-index: 1000;
-        overflow: hidden;
+      top: 0px;
+      width: 100%;
+      position: fixed;
+      z-index: 1000;
+      overflow: hidden;
 
       transition: all 0.5s ease-in-out;
 
@@ -3229,34 +3227,34 @@ html[data-direction="up"] {
 
 .nav-is-selected {
   position: absolute;
-  bottom: -.2rem;
+  bottom: -0.2rem;
   height: 0.125rem;
   background: #000;
   width: 100%;
-  &.is-inverse-selected{
+  &.is-inverse-selected {
     background: white;
   }
 }
-.nav-is-selected::after{
+.nav-is-selected::after {
   z-index: 100;
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   left: 50%;
-  margin-left: -2.885px ;
-  top:-1px;
+  margin-left: -2.885px;
+  top: -1px;
   width: 5.77px;
   height: 5.77px;
-  background: #FFFFFF;
-  border-right:0.125rem solid #000;
-  border-bottom:0.125rem solid #000;
-  transform:rotate(45deg);
+  background: #ffffff;
+  border-right: 0.125rem solid #000;
+  border-bottom: 0.125rem solid #000;
+  transform: rotate(45deg);
 }
 
 .is-inverse-selected::after {
   background: #000 !important;
-  border-right:0.125rem solid #fff;
-  border-bottom:0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  border-bottom: 0.125rem solid #fff;
 }
 .contact .is-inverse-selected::after {
   background: #4e99e0 !important;

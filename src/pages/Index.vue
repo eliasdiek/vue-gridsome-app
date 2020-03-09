@@ -2,7 +2,11 @@
   <Layout>
     <div class="home">
       <v-container class="quarry-container">
-        <v-container class="quarry-section hero-section" data-aos="fade-right" data-aos-once="true">
+        <v-container
+          class="quarry-section hero-section"
+          data-aos="fade-right"
+          data-aos-once="true"
+        >
           <h1 class="text-center h1">
             We craft digital products <br />
             that satisfy, empower, and convert.
@@ -31,7 +35,15 @@
               ></v-divider>
             </template>
           </v-list>
-          <v-btn class="quarry-btn btn-primary more-cases" @click="() => {$router.push('/cases')}">More Cases</v-btn>
+          <v-btn
+            class="quarry-btn btn-primary more-cases"
+            @click="
+              () => {
+                $router.push('/cases');
+              }
+            "
+            >More Cases</v-btn
+          >
         </v-flex>
         <home-notify class="margin-home-notify" />
       </v-container>
@@ -116,7 +128,7 @@ export default {
   },
   mounted() {
     this.selectedCases = this.$page.cases.edges;
-    console.log('[selectedCases]',this.selectedCases)
+    console.log("[selectedCases]", this.selectedCases);
   }
 };
 </script>
