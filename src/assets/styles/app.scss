@@ -1180,7 +1180,7 @@ button.quarry-btn {
     }
     .start-conversation {
       height: auto !important;
-      padding: 1rem 2rem !important;
+      padding: .5rem 2rem !important;
       color: #ffffff;
       font-family: Muli;
       font-size: 1.125rem;
@@ -1188,8 +1188,11 @@ button.quarry-btn {
       margin-top: 0;
       margin-bottom: auto;
     }
+    .v-btn__content {
+      line-height: inherit;
+    }
     .learn-more {
-      padding: 1rem 3.25rem;
+      padding: .5rem 3.25rem;
       color: #0c53c7;
       font-family: Muli;
       font-size: 1.125rem;
@@ -1837,37 +1840,37 @@ button.quarry-btn {
   &.all {
     background: #000000;
   }
-  .app {
+  &.app {
     background: #0cc753;
   }
-  .identity {
+  &.identity {
     background: #0c53c7;
   }
-  .ecommerce {
+  &.ecommerce {
     background: #ff680d;
   }
-  .visual {
+  &.visual {
     background: #06a269;
   }
-  .data {
+  &.data {
     background: #e99a01;
   }
-  &.web-development {
+  &.web {
     background: #7a0cc7;
   }
   &.how-to {
     background: #0c53c7;
   }
-  .trends {
+  &.trends {
     background: #0cc753;
   }
-  .operations {
+  &.operations {
     background: #ff680d;
   }
-  .branding {
+  &.branding {
     background: #06a269;
   }
-  .tech {
+  &.tech {
     background: #e99a01;
   }
 
