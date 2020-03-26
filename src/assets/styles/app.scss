@@ -1078,6 +1078,10 @@ button.quarry-btn {
     height: 100%;
     background: #fafafa;
     margin-top: -4rem;
+
+    @media screen and (max-width: 960px) {
+      display: none
+    }
   }
   .quarry-card {
     border-radius: 0 !important;
@@ -1167,12 +1171,21 @@ button.quarry-btn {
         font-size: 1.375rem;
         font-weight: 800;
         line-height: 2.25rem;
+        margin-bottom: .5rem;
+
+        @media screen and (max-width: 960px) {
+          font-size: 1.75rem;
+        }
       }
       p {
         font-family: Montserrat;
         font-size: 1.125rem;
         font-weight: 300;
         margin-bottom: 2rem;
+
+        @media screen and (max-width: 960px) {
+          font-size: 1.525rem;
+        }
       }
       .row {
         margin: 0;
@@ -1180,7 +1193,7 @@ button.quarry-btn {
     }
     .start-conversation {
       height: auto !important;
-      padding: .5rem 2rem !important;
+      padding: 0.5rem 2rem !important;
       color: #ffffff;
       font-family: Muli;
       font-size: 1.125rem;
@@ -1192,7 +1205,7 @@ button.quarry-btn {
       line-height: inherit;
     }
     .learn-more {
-      padding: .5rem 3.25rem;
+      padding: 0.5rem 3.25rem;
       color: #0c53c7;
       font-family: Muli;
       font-size: 1.125rem;
@@ -1530,6 +1543,82 @@ button.quarry-btn {
     position: relative;
     padding: 4.6rem 7.25rem;
     background: #000000;
+
+    .blogdetail-social-block {
+      margin-top: 1rem;
+      min-width: 11rem;
+      max-width: 41rem;
+      display: flex;
+      height: 3rem;
+    
+      .quarry-label-wrapper {
+        margin: 1.5rem 2rem 0 0;
+        .quarry-label {
+          margin-right: 0;
+        }
+      }
+      .blogdetail-blog-date {
+        margin-top: 1.5rem;
+        margin-right: 2rem;
+        color: #fff;
+        font-family: Muli;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1rem;
+        display: inline-block;
+        border-bottom: 1px solid #fff;
+      }
+      .blogdetail-social-icons {
+        margin-top: 1.5rem;
+        display: flex;
+        > a {
+          position: relative;
+          margin: 0 .5rem;
+        }
+        .m-tooltip {
+          position: absolute;
+          z-index: 100;
+          // width: 8rem;
+          top: -.5rem;
+          left: 2.25rem;
+          padding: .5rem 1rem;
+          background: #fff;
+          border-radius: 5px;
+          color: #000;
+          line-height: 1rem;
+          font-size: 1rem;
+          display: block;
+          width: max-content;
+          transition: all .5s;
+          @media screen and (max-width: 960px) {
+            top: -3rem;
+            left: -3rem;
+          }
+        }
+        img {
+          display: block;
+          margin-top: 0;
+        }
+      }
+    
+      @media screen and (max-width: 960px) {
+        margin: 1rem 0 2rem 0rem;
+        display: flex;
+        flex-direction: row;
+        .blogdetail-social-icons {
+          display: flex;
+    
+          img {
+            margin-top: 0;
+            margin-right: 1rem;
+          }
+        }
+        .blogdetail-blog-date {
+          margin-top: 1.5rem;
+          margin-right: 2rem;
+        }
+      }
+    }
   }
 
   .blogdetail-summary-title {
@@ -1565,66 +1654,15 @@ button.quarry-btn {
 
 .blogdetail-content-section {
   margin-top: 0;
-  display: flex;
   overflow: hidden;
   flex-direction: column;
   @media screen and (min-width: 960px) {
-    margin-top: 5rem;
+    margin-top: 2rem;
     flex-direction: row;
-    max-width: 81.8%;
-    margin-right: 0;
   }
 
-  @media screen and (min-width: 1900px) {
-    max-width: 81.8% !important;
-  }
-
-  .blogdetail-social-block {
-    min-width: 11rem;
-
-    .quarry-label-wrapper span:first-child {
-      margin-right: 0;
-    }
-    .blogdetail-blog-date {
-      margin-top: 1rem;
-      color: #000000;
-      font-family: Muli;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 2rem;
-      display: inline-block;
-      border-bottom: 1px solid #000000;
-    }
-    .blogdetail-social-icons img {
-      display: block;
-      margin-top: 1.75rem;
-    }
-
-    @media screen and (max-width: 960px) {
-      margin-bottom: 1rem;
-      display: flex;
-      flex-direction: row;
-      .blogdetail-social-icons {
-        display: flex;
-
-        img {
-          margin-top: 0.9rem;
-          margin-right: 1rem;
-        }
-      }
-      .blogdetail-blog-date {
-        margin-top: 0.5rem;
-        margin-right: 2rem;
-      }
-    }
-  }
   .blogdetail-content-block {
     max-width: 100%;
-    padding-left: 3rem;
-    @media screen and (min-width: 960px) {
-      padding-right: 16rem;
-    }
-
     p {
       max-width: 41.5rem;
       color: #000000;
@@ -1632,7 +1670,7 @@ button.quarry-btn {
       font-size: 1.125rem;
       font-weight: 300;
       line-height: 1.75rem;
-      margin-bottom: 1.75rem;
+      margin: 1rem auto 1.75rem;
     }
     li,
     h1,
@@ -1642,11 +1680,12 @@ button.quarry-btn {
       max-width: 41.5rem;
       font-family: Muli;
       font-weight: 700;
+      margin: 0 auto;
     }
     figure {
       max-width: 100%;
       overflow: hidden;
-      margin: 6rem 0 6rem -2rem;
+      margin: 6rem auto;
     }
     img {
       width: 100%;
@@ -1737,6 +1776,8 @@ button.quarry-btn {
         font-family: Muli;
         font-size: 2.75rem;
         font-weight: 700;
+        line-height: 2.75rem;
+        margin-bottom: 1rem;
       }
       p {
         margin-bottom: 0;
@@ -2953,7 +2994,7 @@ html[data-direction="up"] {
   }
 
   .casedetail-hero-section {
-    padding: 0 2rem;
+    padding: 85.75px 2rem 0;
   }
 
   .casedetail-top-section {
@@ -3084,7 +3125,7 @@ html[data-direction="up"] {
     .casedetail-description-blocks {
       max-width: 100%;
       margin-left: 0;
-      padding-left: 0;
+      padding: 0 2rem;
       .description-text {
         max-width: 100%;
         font-size: 1.5rem;
@@ -3117,7 +3158,7 @@ html[data-direction="up"] {
   }
 
   .blogdetail-content-section {
-    padding: 2rem;
+    padding: 1rem 2rem 2rem 2rem;
     .blogdetail-content-block {
       padding-left: 0;
       p {

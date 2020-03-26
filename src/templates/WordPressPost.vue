@@ -24,46 +24,49 @@
               ></div>
             </div>
           </div>
+
+          <div class="blogdetail-social-block">
+            <div class="quarry-label-wrapper">
+              <span
+                class="quarry-label"
+                :class="$page.post.categories[0].slug"
+                @click="backToBlog"
+              >
+                {{ $page.post.categories[0].title }}
+              </span>
+            </div>
+            <div class="blogdetail-blog-date">
+              {{ $page.post.date | formatDate }}
+            </div>
+            <div class="blogdetail-social-icons">
+              <a href="javascript:void(0)" @click="sharePost('facebook')">
+                <g-image
+                  src="~/assets/images/icon-facebook.svg"
+                  alt="facebook"
+                  height="1.25rem"
+                />
+              </a>
+              <a href="javascript:void(0)" @click="sharePost('twitter')">
+                <g-image
+                  src="~/assets/images/icon-twitter.svg"
+                  alt="twitter"
+                  height="1.25rem"
+                />
+              </a>
+              <a href="javascript:void(0)" @click="copyLink()">
+                <g-image
+                  src="~/assets/images/icon-link-variant.svg"
+                  alt="link-variant"
+                  height="1.25rem"
+                />
+                <span class="m-tooltip" transition="fade-transition" v-if="linkCopied">{{msg}}</span>
+              </a>
+            </div>
+          </div>
         </div>
       </v-container>
+
       <v-container class="blogdetail-content-section">
-        <div class="blogdetail-social-block">
-          <div class="quarry-label-wrapper">
-            <span
-              class="quarry-label"
-              :class="$page.post.categories[0].slug"
-              @click="backToBlog"
-            >
-              {{ $page.post.categories[0].title }}
-            </span>
-          </div>
-          <div class="blogdetail-blog-date">
-            {{ $page.post.date | formatDate }}
-          </div>
-          <div class="blogdetail-social-icons">
-            <g-link :to="'https://facebook.com/sharer/sharer.php?u=' + pageUrl">
-              <g-image
-                src="~/assets/images/icon-facebook.svg"
-                alt="facebook"
-                height="1.25rem"
-              />
-            </g-link>
-            <g-link :to="'https://twitter.com/share?url=' + pageUrl">
-              <g-image
-                src="~/assets/images/icon-twitter.svg"
-                alt="twitter"
-                height="1.25rem"
-              />
-            </g-link>
-            <g-link to="https://facebook.com">
-              <g-image
-                src="~/assets/images/icon-link-variant.svg"
-                alt="link-variant"
-                height="1.25rem"
-              />
-            </g-link>
-          </div>
-        </div>
         <div class="blogdetail-content-block" v-html="$page.post.content"></div>
       </v-container>
       <v-container class="cases-cards-section margin-cases-cards">
@@ -175,7 +178,9 @@ export default {
 
   data() {
     return {
-      pageUrl: ""
+      pageUrl: "",
+      linkCopied: false,
+      msg: '',
     };
   },
 
@@ -185,7 +190,83 @@ export default {
       let categoryId = this.$page.post.categories[0].id;
       this.setActiveCategory(categoryId);
       this.$router.push("/blog");
-    }
+    },
+    sharePost(provider) {
+      const pageUrl = document.URL;
+      if (provider === "facebook") {
+        const url = "https://facebook.com/sharer/sharer.php?u=" + pageUrl;
+        this.PopupCenter(url, "Facebook", 600, 400);
+      } else if (provider === "twitter") {
+        const url = "https://twitter.com/share?url=" + pageUrl;
+        this.PopupCenter(url, "Facebook", 600, 400);
+      }
+    },
+    PopupCenter(url, title, w, h) {
+      const dualScreenLeft =
+        window.screenLeft != undefined ? window.screenLeft : screen.left;
+      const dualScreenTop =
+        window.screenTop != undefined ? window.screenTop : screen.top;
+
+      const width = window.innerWidth
+        ? window.innerWidth
+        : document.documentElement.clientWidth
+        ? document.documentElement.clientWidth
+        : screen.width;
+      const height = window.innerHeight
+        ? window.innerHeight
+        : document.documentElement.clientHeight
+        ? document.documentElement.clientHeight
+        : screen.height;
+
+      var left = width / 2 - w / 2 + dualScreenLeft;
+      var top = height / 2 - h / 2 + dualScreenTop;
+      var newWindow = window.open(
+        url,
+        title,
+        "scrollbars=yes, width=" +
+          w +
+          ", height=" +
+          h +
+          ", top=" +
+          top +
+          ", left=" +
+          left
+      );
+
+      if (window.focus) {
+        newWindow.focus();
+      }
+    },
+    copyLink() {
+      const textArea = document.createElement("textarea");
+      textArea.value = document.URL;
+
+      // Avoid scrolling to bottom
+      textArea.style.top = "0";
+      textArea.style.left = "0";
+      textArea.style.position = "fixed";
+
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+
+      try {
+        const successful = document.execCommand('copy');
+        this.msg = successful ? 'Link copied!' : 'Link can\'t be copied';
+        this.linkCopied = true
+        setTimeout(() => {
+          this.linkCopied = false
+        }, 1000)
+      } catch (err) {
+        this.msg = 'Link can\'t be copied';
+        this.linkCopied = true
+        setTimeout(() => {
+          this.linkCopied = false
+        }, 1000)
+      }
+
+      document.body.removeChild(textArea);
+    },
   },
 
   mounted() {
