@@ -59,7 +59,12 @@
                   alt="link-variant"
                   height="1.25rem"
                 />
-                <span class="m-tooltip" transition="fade-transition" v-if="linkCopied">{{msg}}</span>
+                <span
+                  class="m-tooltip"
+                  transition="fade-transition"
+                  v-if="linkCopied"
+                  >{{ msg }}</span
+                >
               </a>
             </div>
           </div>
@@ -180,7 +185,7 @@ export default {
     return {
       pageUrl: "",
       linkCopied: false,
-      msg: '',
+      msg: ""
     };
   },
 
@@ -251,22 +256,22 @@ export default {
       textArea.select();
 
       try {
-        const successful = document.execCommand('copy');
-        this.msg = successful ? 'Link copied!' : 'Link can\'t be copied';
-        this.linkCopied = true
+        const successful = document.execCommand("copy");
+        this.msg = successful ? "Link copied!" : "Link can't be copied";
+        this.linkCopied = true;
         setTimeout(() => {
-          this.linkCopied = false
-        }, 1000)
+          this.linkCopied = false;
+        }, 1000);
       } catch (err) {
-        this.msg = 'Link can\'t be copied';
-        this.linkCopied = true
+        this.msg = "Link can't be copied";
+        this.linkCopied = true;
         setTimeout(() => {
-          this.linkCopied = false
-        }, 1000)
+          this.linkCopied = false;
+        }, 1000);
       }
 
       document.body.removeChild(textArea);
-    },
+    }
   },
 
   mounted() {

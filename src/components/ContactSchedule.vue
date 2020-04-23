@@ -60,10 +60,7 @@
               @blur="blurNote"
               @focus="focusNote"
             ></v-text-field>
-            <v-btn
-              class="quarry-btn btn-primary send-btn"
-              @click="sendData()"
-            >
+            <v-btn class="quarry-btn btn-primary send-btn" @click="sendData()">
               Send
             </v-btn>
           </div>
@@ -88,7 +85,7 @@
 
 <script>
 import VueFlip from "vue-flip";
-const axios = require('axios');
+const axios = require("axios");
 
 export default {
   name: "constacts",
@@ -121,20 +118,22 @@ export default {
     },
     sendData() {
       const data = {
-        "email": this.email
+        email: this.email
       };
 
-      axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
-      axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+      axios.defaults.headers.post["Content-Type"] =
+        "application/json;charset=utf-8";
+      axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
-      axios.post('https://wordpress.dev.quarry.team/mailinglist.php ', data)
-      .then(response => {
-        console.log(response.data)
-        this.changeStatus('first-flip')
-      })
-      .catch(error => {
+      axios
+        .post("https://wordpress.dev.quarry.team/mailinglist.php ", data)
+        .then(response => {
+          console.log(response.data);
+          this.changeStatus("first-flip");
+        })
+        .catch(error => {
           console.log(error);
-      });
+        });
     }
   }
 };
