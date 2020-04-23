@@ -10,7 +10,7 @@ module.exports = {
     {
       use: "@gridsome/source-wordpress",
       options: {
-        baseUrl: "https://wordpress.dev.quarry.team",
+        baseUrl: "https://wordpress.quarry.team",
         typeName: "WordPress"
       }
     },
