@@ -1,4 +1,6 @@
 <template>
+  <v-content class="gradient-blue quarry-section contact-section">
+    <div class="contact-connection-background"></div>
 <v-container class="carousel-controls">
         <div class="carousel-number">
           {{ carouselNumber + 1 + "/" + images.length }}
@@ -15,8 +17,6 @@
           </v-icon>
         </div>
       </v-container>
-  <v-content class="gradient-blue quarry-section contact-section">
-    <div class="contact-connection-background"></div>
     <v-container :class="status">
       <ClientOnly>
         <vue-flip :bindWithMe="isFlipped" width="100%">
