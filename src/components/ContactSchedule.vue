@@ -1,22 +1,6 @@
 <template>
   <v-content class="gradient-blue quarry-section contact-section">
     <div class="contact-connection-background"></div>
-<v-container class="carousel-controls">
-        <div class="carousel-number">
-          {{ carouselNumber + 1 + "/" + images.length }}
-        </div>
-        <div class="carousel-delimiters">
-          <span class="carousel-timer" :class="{ reset: reset }"></span>
-        </div>
-        <div class="carousel-buttons d-flex">
-          <v-icon color="black" @click="prevCarousel">
-            mdi-chevron-left
-          </v-icon>
-          <v-icon color="black" @click="nextCarousel">
-            mdi-chevron-right
-          </v-icon>
-        </div>
-      </v-container>
     <v-container :class="status">
       <ClientOnly>
         <vue-flip :bindWithMe="isFlipped" width="100%">
