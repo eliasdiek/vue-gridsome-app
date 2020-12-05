@@ -9,10 +9,7 @@
   >
     <v-toolbar-title>
       <g-link to="/">
-        <g-image
-          class="quarry-logo"
-          src="~/assets/images/icon-logo-white.svg"
-        />
+        Diek Technologies
       </g-link>
     </v-toolbar-title>
     <v-list>

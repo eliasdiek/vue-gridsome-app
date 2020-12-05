@@ -61,9 +61,9 @@ export default {
           this.activeLink
         )
       ) {
-        return require("~/assets/images/icon-logo-white.svg");
+        return require("~/assets/images/logo-white.png");
       } else {
-        return require("~/assets/images/icon-logo-quarry.svg");
+        return require("~/assets/images/logo-black.png");
       }
     },
     drawer: {

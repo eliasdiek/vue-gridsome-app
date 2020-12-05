@@ -4,10 +4,10 @@
       <div class="quarry-block">
         <div>
           <div class="desktop-logo">
-            <g-image src="~/assets/images/icon-logo-quarry.svg" />
+            <g-image src="~/assets/images/logo-black.png" />
           </div>
           <div class="mobile-logo">
-            <g-image src="~/assets/images/icon-logo-white.svg" />
+            <g-image src="~/assets/images/logo-white.png" />
           </div>
           <div class="quarry-text">
             Quarry is a global, full-stack web product team that is empassioned
