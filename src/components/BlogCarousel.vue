@@ -66,7 +66,7 @@ export default {
           image: require("~/assets/images/testimonials/CBD-R-Us-Slide@2x.jpg"),
           avatar: require("~/assets/images/testimonials/Shervin-Mohseni@2x.jpg"),
           content:
-            "It's been a pleasure working with Brendan and the DiekTech team. They are extremely helpful and responsive."
+            "It's been a pleasure working with Elias and the DiekTech team. They are extremely helpful and responsive."
         },
         {
           name: "Zack Fleishman",
