@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: "Quarry",
+  siteName: "DiekTech",
   plugins: [
     {
       use: "@gridsome/source-wordpress",
@@ -17,7 +17,7 @@ module.exports = {
     {
       use: "gridsome-plugin-pwa",
       options: {
-        title: "Quarry",
+        title: "DiekTech",
         startUrl: "/",
         display: "standalone",
         statusBarStyle: "default",
@@ -25,7 +25,7 @@ module.exports = {
         disableServiceWorker: false,
         serviceWorkerPath: "service-worker.js",
         cachedFileTypes: "js,json,css,html,png,jpg,jpeg,svg",
-        shortName: "Quarry",
+        shortName: "DiekTech",
         themeColor: "#000000",
         backgroundColor: "#000000",
         icon: "src/favicon.png", // must be provided like 'src/favicon.png'

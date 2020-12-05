@@ -66,7 +66,7 @@ export default {
           image: require("~/assets/images/testimonials/CBD-R-Us-Slide@2x.jpg"),
           avatar: require("~/assets/images/testimonials/Shervin-Mohseni@2x.jpg"),
           content:
-            "It's been a pleasure working with Brendan and the Quarry team. They are extremely helpful and responsive."
+            "It's been a pleasure working with Brendan and the DiekTech team. They are extremely helpful and responsive."
         },
         {
           name: "Zack Fleishman",
@@ -75,7 +75,7 @@ export default {
           image: require("~/assets/images/testimonials/Mompou@2x.jpg"),
           avatar: require("~/assets/images/testimonials/Zack-Fleishman.jpg"),
           content:
-            "Having aired on Shark Tank, we had a lot of traffic and needed to meet the demands of a forward-thinking company. Quarry worked expeditiously to make sure all of our website needs were addressed. Their professionalism, creativity and friendliness will keep us coming back over-and-over again."
+            "Having aired on Shark Tank, we had a lot of traffic and needed to meet the demands of a forward-thinking company. DiekTech worked expeditiously to make sure all of our website needs were addressed. Their professionalism, creativity and friendliness will keep us coming back over-and-over again."
         },
         {
           name: "Tony Martinez",
@@ -84,7 +84,7 @@ export default {
           image: require("~/assets/images/testimonials/Shark-Wheel-Slide@2x.jpg"),
           avatar: require("~/assets/images/testimonials/Tony-Martinez.jpg"),
           content:
-            "We have been working with Quarry for several years on multiple businesses. Their attention to detail, quick response, and the quality of their work is second to none. We have been very happy with the results on all our initiatives and projects. We highly recommend them!"
+            "We have been working with DiekTech for several years on multiple businesses. Their attention to detail, quick response, and the quality of their work is second to none. We have been very happy with the results on all our initiatives and projects. We highly recommend them!"
         }
       ]
     };

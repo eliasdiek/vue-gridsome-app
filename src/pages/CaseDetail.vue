@@ -50,10 +50,10 @@
               </div>
               <div>
                 <v-avatar size="1.75rem">
-                  <g-image src="~/assets/images/image-brendan.jpg" />
+                  <g-image src="~/assets/images/image-elias.jpg" />
                 </v-avatar>
                 <div>
-                  <span class="summary-title4">Brendan Binger</span>
+                  <span class="summary-title4">Elias Diek</span>
                   <span class="summary-text4"> / Creative Director</span>
                 </div>
               </div>
@@ -338,7 +338,7 @@ import MakeConnection from "../components/MakeConnection";
 
 export default {
   metaInfo: {
-    title: "Cases | Quarry Design Group"
+    title: "Cases | Diek Technologies LLC"
   },
   components: {
     Footer,

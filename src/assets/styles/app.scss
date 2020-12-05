@@ -110,7 +110,7 @@ button.quarry-btn {
 
     .quarry-logo {
       width: 8.75rem;
-      height: intrinsic;
+      height: auto;
     }
 
     .toolbar-side-icon {
@@ -323,7 +323,7 @@ button.quarry-btn {
     }
     .quarry-logo {
       width: 12.25rem;
-      height: intrinsic;
+      max-height: 35px;
     }
     .v-list {
       background: transparent;
@@ -1954,7 +1954,7 @@ button.quarry-btn {
 .margin-services-contact {
   margin-top: 11rem !important;
   &.contact-page {
-    margin-top: 19.25rem !important;
+    margin-top: 7rem !important;
   }
 }
 .margin-cases-labels {
@@ -2452,6 +2452,7 @@ html[data-direction="up"] {
       }
       .quarry-logo {
         width: 10rem;
+        max-height: 30px;
       }
       .v-toolbar__side-icon:before {
         opacity: 0;

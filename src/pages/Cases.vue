@@ -110,7 +110,7 @@ import CategoriesWidget from "../components/CategoriesWidget";
 
 export default {
   metaInfo: {
-    title: "Cases | Quarry Design Group"
+    title: "Cases | Diek Technologies LLC"
   },
   components: {
     Footer,

@@ -7,10 +7,10 @@
           <div class="flip-wrapper" slot="front">
             <p class="contact-title">Let's chat</p>
             <v-avatar class="contact-avatar" width="6.25rem" height="6.25rem">
-              <g-image src="~/assets/images/image-brendan.jpg" />
+              <g-image src="~/assets/images/image-elias.jpg" />
             </v-avatar>
             <p class="contact-subtitle">
-              👋 Hey there, I'm Brendan.
+              👋 Hey there, I'm Elias.
             </p>
             <p class="contact-content">
               I would be happy to have a converstion and answer any questions
@@ -73,7 +73,7 @@
               mdi-arrow-left
             </v-icon>
             <iframe
-              src="https://meetingbird.com/l/quarrybbinger/intro"
+              src="https://www.meetingbird.com/m/SJOcCMKoP"
               style="width: 100%; border: none; min-height: 600px;"
             ></iframe>
           </div>
@@ -121,19 +121,19 @@ export default {
         email: this.email
       };
 
-      axios.defaults.headers.post["Content-Type"] =
-        "application/json;charset=utf-8";
-      axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
+      // axios.defaults.headers.post["Content-Type"] =
+      //   "application/json;charset=utf-8";
+      // axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
-      axios
-        .post("https://wordpress.dev.quarry.team/mailinglist.php ", data)
-        .then(response => {
-          console.log(response.data);
-          this.changeStatus("first-flip");
-        })
-        .catch(error => {
-          console.log(error);
-        });
+      // axios
+      //   .post("https://wordpress.dev.quarry.team/mailinglist.php ", data)
+      //   .then(response => {
+      //     console.log(response.data);
+      //     this.changeStatus("first-flip");
+      //   })
+      //   .catch(error => {
+      //     console.log(error);
+      //   });
     }
   }
 };

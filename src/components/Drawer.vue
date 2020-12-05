@@ -9,7 +9,7 @@
   >
     <v-toolbar-title>
       <g-link to="/">
-        Diek Technologies
+        <g-image class="quarry-logo" :src="logo" />
       </g-link>
     </v-toolbar-title>
     <v-list>
@@ -36,6 +36,17 @@ export default {
       },
       set(val) {
         this.setDrawer(val);
+      }
+    },
+    logo: function() {
+      if (
+        ["services", "cases", "blog", "contact", "team"].includes(
+          this.activeLink
+        )
+      ) {
+        return require("~/assets/images/logo-white.png");
+      } else {
+        return require("~/assets/images/logo-black.png");
       }
     }
   },

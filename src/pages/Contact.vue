@@ -57,7 +57,7 @@ import Footer from "../components/Footer";
 
 export default {
   metaInfo: {
-    title: "Contact | Quarry Design Group"
+    title: "Contact | Diek Technologies LLC"
   },
   components: {
     ContactSchedule,

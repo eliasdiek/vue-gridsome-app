@@ -8,7 +8,7 @@
             with good people.
           </h1>
           <p class="hero-text">
-            Quarry is a group of passionate and curious individuals who are
+            DiekTech is a group of passionate and curious individuals who are
             excited about crafting great digital products and experiences.
           </p>
         </v-container>
@@ -92,7 +92,7 @@
         </v-container>
       </div>
 
-      <div class="team-members-section">
+      <!-- <div class="team-members-section">
         <v-container class="team-members-section-wrapper">
           <h3 class="block-title">The team</h3>
           <div class="section-body">
@@ -108,7 +108,7 @@
             </v-row>
           </div>
         </v-container>
-      </div>
+      </div> -->
 
       <div class="team-distributed-section">
         <div class="team-distributed-background"></div>
@@ -189,7 +189,7 @@ Vue.use(VueGoogleMaps, {
 
 export default {
   metaInfo: {
-    title: "Team | Quarry Design Group"
+    title: "Team | Diek Technologies LLC"
   },
   components: {
     "google-map": VueGoogleMaps.Map,

@@ -107,7 +107,7 @@ let vm = this;
 
 export default {
   metaInfo: {
-    title: "Blog | Quarry Design Group"
+    title: "Blog | Diek Technologies LLC"
   },
 
   components: {

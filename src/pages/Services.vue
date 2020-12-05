@@ -39,8 +39,8 @@
           <div class="right-block">
             <p class="services-quote">
               “The ultimate goal of design is to bring some order in a chaotic,
-              fast-paced and ever-changing world. Here at Quarry we strive for a
-              simpler, clearer, more human & more approachable version of
+              fast-paced and ever-changing world. Here at DiekTech we strive for
+              a simpler, clearer, more human & more approachable version of
               reality.”
             </p>
             <span
@@ -229,7 +229,7 @@
               home we've ever known rich in heavy atoms. Tendrils of gossamer
               clouds another world a mote of dust suspended in a sunbeam.”
             </p>
-            <span><strong>Brendan Binger</strong> / Founder</span>
+            <span><strong>Elias Diek</strong> / Founder</span>
           </div>
         </div>
       </v-container>
@@ -299,7 +299,7 @@ import TopStacks from "../components/TopStacks";
 
 export default {
   metaInfo: {
-    title: "Services | Quarry Design Group"
+    title: "Services | Diek Technologies LLC"
   },
   components: {
     BlogCarousel,

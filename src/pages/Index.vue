@@ -102,8 +102,7 @@ import TopStacks from "../components/TopStacks";
 
 export default {
   metaInfo: {
-    title:
-      "Quality Web Design + User Interfaces & Experience | Quarry Design Group"
+    title: "Web development and Optimization | Diek Technologies LLC"
   },
   components: {
     BlogCarousel,

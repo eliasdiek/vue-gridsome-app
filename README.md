@@ -1,4 +1,4 @@
-# quarry.team Vue
+# diektech.team Vue
 
 ## Project setup
 
