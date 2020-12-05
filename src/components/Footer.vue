@@ -30,7 +30,7 @@
       <div class="partner-block">
         <v-layout wrap justify-center>
           <a v-for="(item, i) in partners" :key="i" class="partner-link">
-            <g-image :src="item.icon" />
+            <g-image :src="item.icon" :class="item.name" />
           </a>
         </v-layout>
         <div class="copyright">
@@ -72,21 +72,29 @@ export default {
         }
       ],
       partners: [
-        {
-          icon: require("~/assets/images/icon-partner-oregon.svg"),
-          link: ""
-        },
+        // {
+        //   icon: require("~/assets/images/icon-partner-oregon.svg"),
+        //   link: ""
+        // },
         {
           icon: require("~/assets/images/icon-partner-google.png"),
-          link: ""
+          link: "",
+          name: "google"
         },
         {
           icon: require("~/assets/images/icon-partner-global-elite.svg"),
-          link: ""
+          link: "",
+          name: "margento"
         },
         {
           icon: require("~/assets/images/icon-partner-shopify.svg"),
-          link: ""
+          link: "",
+          name: "shopify"
+        },
+        {
+          icon: require("~/assets/images/icon-partner-bigcommerce.png"),
+          link: "",
+          name: "bigcommerce"
         }
       ],
       links: [

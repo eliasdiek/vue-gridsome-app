@@ -919,6 +919,10 @@ button.quarry-btn {
         img {
           max-width: 6rem;
           height: 2.5rem;
+
+          &.bigcommerce {
+            max-width: 8rem;
+          }
         }
       }
       .copyright {
